@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface PostCardViewController : UIViewController
+#import "DownloadCallBack.h"
+@interface PostCardViewController : UIViewController <DownloadCallBack, UICollectionViewDataSource, UICollectionViewDelegate>
+@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+- (IBAction)segmentedControlChanged:(id)sender;
 
 @end

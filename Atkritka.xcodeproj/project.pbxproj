@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F271110F16622A7E00087E6E /* PostCardObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F271110E16622A7E00087E6E /* PostCardObject.m */; };
+		F271111316622BE400087E6E /* ImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = F271111216622BE400087E6E /* ImageDownloader.m */; };
 		F28A793D16610D12003D9D8F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28A793C16610D12003D9D8F /* UIKit.framework */; };
 		F28A793F16610D12003D9D8F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28A793E16610D12003D9D8F /* Foundation.framework */; };
 		F28A794116610D12003D9D8F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28A794016610D12003D9D8F /* CoreGraphics.framework */; };
@@ -18,9 +20,15 @@
 		F28A795316610D12003D9D8F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F28A795216610D12003D9D8F /* Default-568h@2x.png */; };
 		F28A795616610D12003D9D8F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28A795416610D12003D9D8F /* MainStoryboard.storyboard */; };
 		F28A795916610D12003D9D8F /* PostCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F28A795816610D12003D9D8F /* PostCardViewController.m */; };
+		F28A796116611228003D9D8F /* PopularDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = F28A796016611228003D9D8F /* PopularDownloader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F271110C16622A5100087E6E /* DownloadCallBack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DownloadCallBack.h; path = Protocols/DownloadCallBack.h; sourceTree = "<group>"; };
+		F271110D16622A7E00087E6E /* PostCardObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostCardObject.h; path = Classes/PostCardObject.h; sourceTree = "<group>"; };
+		F271110E16622A7E00087E6E /* PostCardObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostCardObject.m; path = Classes/PostCardObject.m; sourceTree = "<group>"; };
+		F271111116622BE400087E6E /* ImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloader.h; sourceTree = "<group>"; };
+		F271111216622BE400087E6E /* ImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloader.m; sourceTree = "<group>"; };
 		F28A793816610D12003D9D8F /* Atkritka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atkritka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F28A793C16610D12003D9D8F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F28A793E16610D12003D9D8F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -37,6 +45,8 @@
 		F28A795516610D12003D9D8F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		F28A795716610D12003D9D8F /* PostCardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCardViewController.h; sourceTree = "<group>"; };
 		F28A795816610D12003D9D8F /* PostCardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCardViewController.m; sourceTree = "<group>"; };
+		F28A795F16611227003D9D8F /* PopularDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularDownloader.h; sourceTree = "<group>"; };
+		F28A796016611228003D9D8F /* PopularDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularDownloader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +63,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F271110A16622A3300087E6E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F271110C16622A5100087E6E /* DownloadCallBack.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		F271111016622A8100087E6E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F271110D16622A7E00087E6E /* PostCardObject.h */,
+				F271110E16622A7E00087E6E /* PostCardObject.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		F28A792D16610D12003D9D8F = {
 			isa = PBXGroup;
 			children = (
@@ -83,12 +110,18 @@
 		F28A794216610D12003D9D8F /* Atkritka */ = {
 			isa = PBXGroup;
 			children = (
+				F271111016622A8100087E6E /* Classes */,
+				F271110A16622A3300087E6E /* Protocols */,
 				F28A794B16610D12003D9D8F /* PostCardAppDelegate.h */,
 				F28A794C16610D12003D9D8F /* PostCardAppDelegate.m */,
 				F28A795416610D12003D9D8F /* MainStoryboard.storyboard */,
 				F28A795716610D12003D9D8F /* PostCardViewController.h */,
 				F28A795816610D12003D9D8F /* PostCardViewController.m */,
 				F28A794316610D12003D9D8F /* Supporting Files */,
+				F28A795F16611227003D9D8F /* PopularDownloader.h */,
+				F28A796016611228003D9D8F /* PopularDownloader.m */,
+				F271111116622BE400087E6E /* ImageDownloader.h */,
+				F271111216622BE400087E6E /* ImageDownloader.m */,
 			);
 			path = Atkritka;
 			sourceTree = "<group>";
@@ -177,6 +210,9 @@
 				F28A794916610D12003D9D8F /* main.m in Sources */,
 				F28A794D16610D12003D9D8F /* PostCardAppDelegate.m in Sources */,
 				F28A795916610D12003D9D8F /* PostCardViewController.m in Sources */,
+				F28A796116611228003D9D8F /* PopularDownloader.m in Sources */,
+				F271110F16622A7E00087E6E /* PostCardObject.m in Sources */,
+				F271111316622BE400087E6E /* ImageDownloader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +329,7 @@
 				F28A795E16610D12003D9D8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
