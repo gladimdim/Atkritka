@@ -12,8 +12,9 @@
 #import "ImageDownloader.h"
 
 @interface PostCardViewController ()
-@property NSArray *arrayOfPostCards;
+@property NSMutableArray *arrayOfPostCards;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+@property NSInteger popularCounter;
 @end
 
 @implementation PostCardViewController
@@ -31,17 +32,19 @@
 }
 
 -(void) viewWillAppear:(BOOL)animated {
+    self.popularCounter = 0;
+    self.arrayOfPostCards = [[NSMutableArray alloc] initWithCapacity:10];
     [super viewWillAppear:animated];
-    [self downloadPopular];
+    [self downloadPopular:self.popularCounter];
 }
 
--(void) downloadPopular {
+-(void) downloadPopular:(NSInteger) pageId {
     PopularDownloader *downloader = [[PopularDownloader alloc]init];
-    [downloader getCards:self];
+    [downloader getCards:self forPageId:pageId];
 }
 
 -(void) postCardsDownloaded:(NSArray *)arrayOfPostCards {
-    self.arrayOfPostCards = arrayOfPostCards;
+    [self.arrayOfPostCards addObjectsFromArray:arrayOfPostCards];
     for (int i = 0; i < self.arrayOfPostCards.count; i++) {
         ImageDownloader *downloader = [[ImageDownloader alloc] init];
         downloader.callBackDelegate = self;
@@ -50,12 +53,13 @@
 }
 
 - (IBAction)segmentedControlChanged:(id)sender {
-    [self downloadPopular];
+    [self downloadPopular:0];
 }
 
 -(NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.arrayOfPostCards.count;
 }
+
 
 -(UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"imageCell" forIndexPath:indexPath];
@@ -65,7 +69,15 @@
     PostCardObject *postCardObj = self.arrayOfPostCards[indexPath.row];
 //    UIImageView *imageView = [[UIImageView alloc] initWithImage:postCardObj.imageCard];
     UIImageView *imageViewFromCell = (UIImageView *) [cell viewWithTag:1];
-    imageViewFromCell.image = postCardObj.imageCard;
+    if (postCardObj.imageCard) {
+        imageViewFromCell.image = postCardObj.imageCard;
+    }
+    else {
+        imageViewFromCell.image = [UIImage imageNamed:@"logo.png"];
+    }
+    if (indexPath.row == self.arrayOfPostCards.count-2) {
+        [self downloadPopular:++self.popularCounter];
+    }
     //[cell.contentView addSubview:imageView];
     return cell;
 }

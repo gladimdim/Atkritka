@@ -18,9 +18,9 @@
 
 @implementation PopularDownloader
 
--(void) getCards:(id <DownloadCallBack>) callBackDelegate {
+-(void) getCards:(id <DownloadCallBack>) callBackDelegate forPageId:(NSInteger) pageId {
     self.callBackDelegate = callBackDelegate;
-    NSURL *popularJsonURL = [NSURL URLWithString:@"http://atkritka.com/?all&json=Y"];
+    NSURL *popularJsonURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://atkritka.com/?json=Y&PAGEN_1=%i", pageId]];
     NSURLRequest *request = [NSURLRequest requestWithURL:popularJsonURL];
     NSURLConnection *connection = [NSURLConnection connectionWithRequest:request delegate:self];
     if (connection) {
