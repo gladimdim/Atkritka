@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F22C9456166642510067F482 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F22C9455166642510067F482 /* logo.png */; };
+		F22C94591668DA460067F482 /* PostCardDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F22C94581668DA460067F482 /* PostCardDetailedViewController.m */; };
 		F271110F16622A7E00087E6E /* PostCardObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F271110E16622A7E00087E6E /* PostCardObject.m */; };
 		F271111316622BE400087E6E /* ImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = F271111216622BE400087E6E /* ImageDownloader.m */; };
 		F28A793D16610D12003D9D8F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28A793C16610D12003D9D8F /* UIKit.framework */; };
@@ -26,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		F22C9455166642510067F482 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Resources/logo.png; sourceTree = "<group>"; };
+		F22C94571668DA460067F482 /* PostCardDetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCardDetailedViewController.h; sourceTree = "<group>"; };
+		F22C94581668DA460067F482 /* PostCardDetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCardDetailedViewController.m; sourceTree = "<group>"; };
 		F271110C16622A5100087E6E /* DownloadCallBack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DownloadCallBack.h; path = Protocols/DownloadCallBack.h; sourceTree = "<group>"; };
 		F271110D16622A7E00087E6E /* PostCardObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostCardObject.h; path = Classes/PostCardObject.h; sourceTree = "<group>"; };
 		F271110E16622A7E00087E6E /* PostCardObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostCardObject.m; path = Classes/PostCardObject.m; sourceTree = "<group>"; };
@@ -133,6 +136,8 @@
 				F28A796016611228003D9D8F /* PopularDownloader.m */,
 				F271111116622BE400087E6E /* ImageDownloader.h */,
 				F271111216622BE400087E6E /* ImageDownloader.m */,
+				F22C94571668DA460067F482 /* PostCardDetailedViewController.h */,
+				F22C94581668DA460067F482 /* PostCardDetailedViewController.m */,
 			);
 			path = Atkritka;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 				F28A796116611228003D9D8F /* PopularDownloader.m in Sources */,
 				F271110F16622A7E00087E6E /* PostCardObject.m in Sources */,
 				F271111316622BE400087E6E /* ImageDownloader.m in Sources */,
+				F22C94591668DA460067F482 /* PostCardDetailedViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

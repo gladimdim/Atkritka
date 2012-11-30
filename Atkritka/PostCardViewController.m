@@ -10,6 +10,7 @@
 #import "PopularDownloader.h"
 #import "PostCardObject.h"
 #import "ImageDownloader.h"
+#import "PostCardDetailedViewController.h"
 
 @interface PostCardViewController ()
 @property NSMutableArray *arrayOfPostCards;
@@ -35,12 +36,17 @@
     self.popularCounter = 0;
     self.arrayOfPostCards = [[NSMutableArray alloc] initWithCapacity:10];
     [super viewWillAppear:animated];
-    [self downloadPopular:self.popularCounter];
+    [self downloadCards:self.popularCounter];
 }
 
--(void) downloadPopular:(NSInteger) pageId {
+-(void) downloadCards:(NSInteger ) pageId {
     PopularDownloader *downloader = [[PopularDownloader alloc]init];
-    [downloader getCards:self forPageId:pageId];
+    if (self.segmentedControl.selectedSegmentIndex == 0 )
+        [downloader getCards:self section:@"" forPageId:pageId];
+    else if (self.segmentedControl.selectedSegmentIndex == 1)
+        [downloader getCards:self section:@"new&" forPageId:pageId];
+    else if (self.segmentedControl.selectedSegmentIndex == 2)
+        [downloader getCards:self section:@"all&" forPageId:pageId];
 }
 
 -(void) postCardsDownloaded:(NSArray *)arrayOfPostCards {
@@ -52,10 +58,6 @@
     }
 }
 
-- (IBAction)segmentedControlChanged:(id)sender {
-    [self downloadPopular:0];
-}
-
 -(NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.arrayOfPostCards.count;
 }
@@ -63,11 +65,7 @@
 
 -(UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"imageCell" forIndexPath:indexPath];
-    /*if (!cell) {
-        cell = [UICollectionViewCell alloc] 
-    }*/
     PostCardObject *postCardObj = self.arrayOfPostCards[indexPath.row];
-//    UIImageView *imageView = [[UIImageView alloc] initWithImage:postCardObj.imageCard];
     UIImageView *imageViewFromCell = (UIImageView *) [cell viewWithTag:1];
     if (postCardObj.imageCard) {
         imageViewFromCell.image = postCardObj.imageCard;
@@ -76,9 +74,8 @@
         imageViewFromCell.image = [UIImage imageNamed:@"logo.png"];
     }
     if (indexPath.row == self.arrayOfPostCards.count-2) {
-        [self downloadPopular:++self.popularCounter];
+        [self downloadCards:++self.popularCounter];
     }
-    //[cell.contentView addSubview:imageView];
     return cell;
 }
 
@@ -91,5 +88,24 @@
         }
     }
     [self.collectionView reloadData];
+}
+
+-(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"showCardDetailView" sender:self];
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showCardDetailView"]) {
+        PostCardDetailedViewController *pcVC = (PostCardDetailedViewController *) segue.destinationViewController;
+        NSIndexPath *selectedIndex = [[self.collectionView indexPathsForSelectedItems] lastObject];
+        
+        pcVC.postCardObj = [self.arrayOfPostCards objectAtIndex:selectedIndex.row];
+    }
+}
+
+- (IBAction)segmentedControlChanged:(id)sender {
+    [self.arrayOfPostCards removeAllObjects];
+    [self.collectionView reloadData];
+    [self downloadCards:0];
 }
 @end

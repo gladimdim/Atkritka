@@ -18,9 +18,9 @@
 
 @implementation PopularDownloader
 
--(void) getCards:(id <DownloadCallBack>) callBackDelegate forPageId:(NSInteger) pageId {
+-(void) getCards:(id <DownloadCallBack>) callBackDelegate section:(NSString *)section forPageId:(NSInteger)pageId {
     self.callBackDelegate = callBackDelegate;
-    NSURL *popularJsonURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://atkritka.com/?json=Y&PAGEN_1=%i", pageId]];
+    NSURL *popularJsonURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://atkritka.com/?%@json=Y&PAGEN_1=%i", section, pageId]];
     NSURLRequest *request = [NSURLRequest requestWithURL:popularJsonURL];
     NSURLConnection *connection = [NSURLConnection connectionWithRequest:request delegate:self];
     if (connection) {
@@ -54,8 +54,10 @@
         PostCardObject *obj = [[PostCardObject alloc] init];
         obj.imageURL = [dictCard valueForKey:@"pic"];
         obj.uniqueId = currentKey;
+        obj.rating = [dictCard valueForKey:@"rating"];
+        obj.creationDate = [dictCard valueForKey:@"date"];
+        obj.author = [dictCard valueForKey:@"title"];
         [self.arrayOfPostCards addObject:obj];
-       // NSLog(@"array: %@", dictCard);
     }
     [self.callBackDelegate postCardsDownloaded:self.arrayOfPostCards];
 }

@@ -13,4 +13,6 @@
 @property NSString *imageURL;
 @property NSString *author;
 @property NSString *uniqueId;
+@property NSString *creationDate;
+@property NSString *rating;
 @end
