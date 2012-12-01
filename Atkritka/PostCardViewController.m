@@ -11,6 +11,7 @@
 #import "PostCardObject.h"
 #import "ImageDownloader.h"
 #import "PostCardDetailedViewController.h"
+#import "StatusLabel.h"
 
 @interface PostCardViewController ()
 @property NSMutableArray *arrayOfPostCards;
@@ -70,7 +71,9 @@
         imageViewFromCell.image = [UIImage imageNamed:@"logo.png"];
     }
     if (indexPath.row == self.arrayOfPostCards.count-2) {
-        [self downloadCards:++self.popularCounter];
+       [self downloadCards:++self.popularCounter];
+       //[self.collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObjects:NSIndex, nil]];
+        [StatusLabel showLabelWithStatusOfAction:@"Обновляем" forView:self.view];
     }
     return cell;
 }

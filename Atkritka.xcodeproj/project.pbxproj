@@ -25,6 +25,7 @@
 		F28A796116611228003D9D8F /* PopularDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = F28A796016611228003D9D8F /* PopularDownloader.m */; };
 		F2E1FD49166A1A8F0073FAF2 /* Delete.png in Resources */ = {isa = PBXBuildFile; fileRef = F2E1FD48166A1A8F0073FAF2 /* Delete.png */; };
 		F2E1FD52166A3F5F0073FAF2 /* PostCardDetailedlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2E1FD50166A3F5F0073FAF2 /* PostCardDetailedlViewController.xib */; };
+		F2E1FD55166A45650073FAF2 /* StatusLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E1FD54166A45650073FAF2 /* StatusLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,8 @@
 		F28A796016611228003D9D8F /* PopularDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularDownloader.m; sourceTree = "<group>"; };
 		F2E1FD48166A1A8F0073FAF2 /* Delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Delete.png; sourceTree = "<group>"; };
 		F2E1FD50166A3F5F0073FAF2 /* PostCardDetailedlViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCardDetailedlViewController.xib; sourceTree = "<group>"; };
+		F2E1FD53166A45650073FAF2 /* StatusLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatusLabel.h; path = Classes/StatusLabel.h; sourceTree = "<group>"; };
+		F2E1FD54166A45650073FAF2 /* StatusLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatusLabel.m; path = Classes/StatusLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,8 @@
 		F271111016622A8100087E6E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F2E1FD53166A45650073FAF2 /* StatusLabel.h */,
+				F2E1FD54166A45650073FAF2 /* StatusLabel.m */,
 				F271110D16622A7E00087E6E /* PostCardObject.h */,
 				F271110E16622A7E00087E6E /* PostCardObject.m */,
 			);
@@ -239,6 +244,7 @@
 				F271110F16622A7E00087E6E /* PostCardObject.m in Sources */,
 				F271111316622BE400087E6E /* ImageDownloader.m in Sources */,
 				F22C94591668DA460067F482 /* PostCardDetailedViewController.m in Sources */,
+				F2E1FD55166A45650073FAF2 /* StatusLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
