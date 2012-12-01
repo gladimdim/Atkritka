@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface PopularDownloader : NSObject <NSURLConnectionDelegate, NSURLConnectionDataDelegate>
--(void) getCards:(id) callBackDelegate section:(NSString *) section forPageId:(NSInteger) pageId;
+-(void) getCardsDelegate:(id) callBackDelegate section:(NSString *) section forPageId:(NSInteger) pageId;
 
 @end

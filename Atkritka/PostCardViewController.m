@@ -39,11 +39,11 @@
 -(void) downloadCards:(NSInteger ) pageId {
     PopularDownloader *downloader = [[PopularDownloader alloc]init];
     if (self.segmentedControl.selectedSegmentIndex == 0 )
-        [downloader getCards:self section:@"" forPageId:pageId];
+        [downloader getCardsDelegate:self section:@"" forPageId:pageId];
     else if (self.segmentedControl.selectedSegmentIndex == 1)
-        [downloader getCards:self section:@"new&" forPageId:pageId];
+        [downloader getCardsDelegate:self section:@"new&" forPageId:pageId];
     else if (self.segmentedControl.selectedSegmentIndex == 2)
-        [downloader getCards:self section:@"all&" forPageId:pageId];
+        [downloader getCardsDelegate:self section:@"all&" forPageId:pageId];
 }
 
 -(void) postCardsDownloaded:(NSArray *)arrayOfPostCards {
@@ -74,8 +74,19 @@
        [self downloadCards:++self.popularCounter];
        //[self.collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObjects:NSIndex, nil]];
         [StatusLabel showLabelWithStatusOfAction:@"Обновляем" forView:self.view];
+        //[self addDummyPostCardsAndUpdateTableView];
     }
     return cell;
+}
+
+-(void) addDummyPostCardsAndUpdateTableView {
+    NSMutableArray *arrayOfDummyIndexes = [[NSMutableArray alloc] init];
+    for (int i = 0; i < 10; i++) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+        [arrayOfDummyIndexes addObject:indexPath];
+        [self.arrayOfPostCards addObject:[NSNull null]];
+    }
+    //[self.collectionView reloadItemsAtIndexPaths:arrayOfDummyIndexes];
 }
 
 -(void) imageDownloadedForCard:(PostCardObject *) postCard {
