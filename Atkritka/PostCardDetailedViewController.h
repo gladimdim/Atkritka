@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "PostCardObject.h"
 
-@interface PostCardDetailedViewController : UIViewController 
+
+@protocol ModalPostCardCallBack <NSObject>
+
+-(void) closeModalPostCard;
+
+@end
+
+@interface PostCardDetailedViewController : UIViewController
+@property id <ModalPostCardCallBack> delegate;
 @property PostCardObject *postCardObj;
 @end

@@ -23,6 +23,8 @@
 		F28A795616610D12003D9D8F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28A795416610D12003D9D8F /* MainStoryboard.storyboard */; };
 		F28A795916610D12003D9D8F /* PostCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F28A795816610D12003D9D8F /* PostCardViewController.m */; };
 		F28A796116611228003D9D8F /* PopularDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = F28A796016611228003D9D8F /* PopularDownloader.m */; };
+		F2E1FD49166A1A8F0073FAF2 /* Delete.png in Resources */ = {isa = PBXBuildFile; fileRef = F2E1FD48166A1A8F0073FAF2 /* Delete.png */; };
+		F2E1FD52166A3F5F0073FAF2 /* PostCardDetailedlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2E1FD50166A3F5F0073FAF2 /* PostCardDetailedlViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		F28A795816610D12003D9D8F /* PostCardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCardViewController.m; sourceTree = "<group>"; };
 		F28A795F16611227003D9D8F /* PopularDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularDownloader.h; sourceTree = "<group>"; };
 		F28A796016611228003D9D8F /* PopularDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularDownloader.m; sourceTree = "<group>"; };
+		F2E1FD48166A1A8F0073FAF2 /* Delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Delete.png; sourceTree = "<group>"; };
+		F2E1FD50166A3F5F0073FAF2 /* PostCardDetailedlViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCardDetailedlViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 		F22C9453166642380067F482 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F2E1FD48166A1A8F0073FAF2 /* Delete.png */,
 				F22C9455166642510067F482 /* logo.png */,
 			);
 			name = Resources;
@@ -138,6 +143,7 @@
 				F271111216622BE400087E6E /* ImageDownloader.m */,
 				F22C94571668DA460067F482 /* PostCardDetailedViewController.h */,
 				F22C94581668DA460067F482 /* PostCardDetailedViewController.m */,
+				F2E1FD50166A3F5F0073FAF2 /* PostCardDetailedlViewController.xib */,
 			);
 			path = Atkritka;
 			sourceTree = "<group>";
@@ -214,6 +220,8 @@
 				F28A795316610D12003D9D8F /* Default-568h@2x.png in Resources */,
 				F28A795616610D12003D9D8F /* MainStoryboard.storyboard in Resources */,
 				F22C9456166642510067F482 /* logo.png in Resources */,
+				F2E1FD49166A1A8F0073FAF2 /* Delete.png in Resources */,
+				F2E1FD52166A3F5F0073FAF2 /* PostCardDetailedlViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

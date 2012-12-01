@@ -91,7 +91,17 @@
 }
 
 -(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"showCardDetailView" sender:self];
+   // [self performSegueWithIdentifier:@"showCardDetailView" sender:self];
+    PostCardDetailedViewController *pcVC = [[PostCardDetailedViewController alloc] initWithNibName:@"PostCardDetailedlViewController" bundle:[NSBundle mainBundle]];
+    NSIndexPath *selectedIndex = [[self.collectionView indexPathsForSelectedItems] lastObject];
+    pcVC.postCardObj = [self.arrayOfPostCards objectAtIndex:selectedIndex.row];
+    pcVC.delegate = self;
+    UINavigationController *unc = [[UINavigationController alloc] initWithRootViewController:pcVC];
+    [unc setNavigationBarHidden:YES];
+    [self presentViewController:unc animated:YES completion:^{
+        NSLog(@"Opening modal view");
+    }];
+
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -107,5 +117,11 @@
     [self.arrayOfPostCards removeAllObjects];
     [self.collectionView reloadData];
     [self downloadCards:0];
+}
+
+-(void) closeModalPostCard {
+    [self dismissViewControllerAnimated:YES completion:^ {
+        NSLog(@"Closed modal view");
+    }];
 }
 @end

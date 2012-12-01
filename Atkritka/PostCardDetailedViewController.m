@@ -13,6 +13,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *labelAuthor;
 @property (strong, nonatomic) IBOutlet UILabel *labelDate;
 @property (strong, nonatomic) IBOutlet UILabel *labelRating;
+- (IBAction)closeButtonPressed:(id)sender;
 
 @end
 
@@ -30,6 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.contentSizeForViewInPopover = CGSizeMake(300, 300);
 	// Do any additional setup after loading the view.
 }
 
@@ -49,4 +51,8 @@
 
 
 
+- (IBAction)closeButtonPressed:(id)sender {
+    NSLog(@"Closing...");
+    [self.delegate closeModalPostCard];
+}
 @end

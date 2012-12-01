@@ -56,7 +56,13 @@
         obj.uniqueId = currentKey;
         obj.rating = [dictCard valueForKey:@"rating"];
         obj.creationDate = [dictCard valueForKey:@"date"];
-        obj.author = [dictCard valueForKey:@"title"];
+        NSArray *splitString = [[dictCard valueForKey:@"title"] componentsSeparatedByString:@"by"];
+        if (splitString.count > 1) {
+            NSString *authorWithOutRoundBraceLeft = splitString[1];
+            NSString *authorWithoutRoundBraceRight = [authorWithOutRoundBraceLeft stringByReplacingOccurrencesOfString:@"(" withString:@""];
+            obj.author = [authorWithoutRoundBraceRight stringByReplacingOccurrencesOfString:@")" withString:@""];
+        }
+
         [self.arrayOfPostCards addObject:obj];
     }
     [self.callBackDelegate postCardsDownloaded:self.arrayOfPostCards];
