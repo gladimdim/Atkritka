@@ -23,6 +23,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.popularCounter = 0;
+    self.arrayOfPostCards = [[NSMutableArray alloc] initWithCapacity:10];
+    [self downloadCards:self.popularCounter];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -30,13 +33,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(void) viewWillAppear:(BOOL)animated {
-    self.popularCounter = 0;
-    self.arrayOfPostCards = [[NSMutableArray alloc] initWithCapacity:10];
-    [super viewWillAppear:animated];
-    [self downloadCards:self.popularCounter];
 }
 
 -(void) downloadCards:(NSInteger ) pageId {
