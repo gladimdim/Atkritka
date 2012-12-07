@@ -82,36 +82,31 @@
     UIScrollView *scrollView = (UIScrollView *) [cell viewWithTag:1];
     CGPoint scrollContentOffset = scrollView.contentOffset;
     CGPoint scrollToPoint;
-    NSLog(@"scrollview contentoffset: %@", NSStringFromCGPoint(scrollContentOffset));
+    NSLog(@"scrollview contentoffset: %@ and direction: %i", NSStringFromCGPoint(scrollContentOffset), sender.direction);
     
     if (scrollContentOffset.x == 200 && sender.direction == UISwipeGestureRecognizerDirectionRight) {
         scrollToPoint = CGPointMake(0, 0);
         [scrollView setContentOffset:scrollToPoint animated:YES];
-       // [self scrollLastSwipedCellAtIndexPath:swipedAtIndexPath];
+      //  [self scrollLastSwipedCellAtIndexPath:swipedAtIndexPath];
     }
     else if (scrollContentOffset.x == 0 && sender.direction == UISwipeGestureRecognizerDirectionLeft){
         scrollToPoint = CGPointMake(200, 0);
         [scrollView setContentOffset:scrollToPoint animated:YES];
        // [self scrollLastSwipedCellAtIndexPath:swipedAtIndexPath];
     }
-    
+    [self scrollLastSwipedCellWithNewIndexPath:swipedAtIndexPath];
     NSLog(@"swiped cell %i", swipedAtIndexPath.row);
 }
 
--(void) scrollLastSwipedCellAtIndexPath:(NSIndexPath *) newIndexPathForSwiped {
-    if (self.lastSwipedCollectionViewCell) {
-        UICollectionViewCell *cell = [self cellForItemAtIndexPath:self.lastSwipedCollectionViewCell];
-        UIScrollView *scroll = (UIScrollView *) [cell viewWithTag:1];
-        [scroll setContentOffset:CGPointMake(0, 0) animated:YES];
+-(void) scrollLastSwipedCellWithNewIndexPath:(NSIndexPath *) newIndexPathForSwiped {
+    if (self.lastSwipedCollectionViewCell == newIndexPathForSwiped) {
+        return;
     }
-    else {
-        self.lastSwipedCollectionViewCell = newIndexPathForSwiped;
-    }
-}
-
--(void) scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
-    [self scrollLastSwipedCellAtIndexPath:self.lastSwipedCollectionViewCell];
-    self.lastSwipedCollectionViewCell = nil;
+    
+    UICollectionViewCell *cell = [self cellForItemAtIndexPath:self.lastSwipedCollectionViewCell];
+    UIScrollView *scroll = (UIScrollView *) [cell viewWithTag:1];
+    [scroll setContentOffset:CGPointMake(0, 0) animated:YES];
+    self.lastSwipedCollectionViewCell = newIndexPathForSwiped;
 }
 
 @end
