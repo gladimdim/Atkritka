@@ -12,11 +12,14 @@
 #import "ImageDownloader.h"
 #import "PostCardDetailedViewController.h"
 #import "StatusLabel.h"
+#import "PostCardsCollectionView.h"
 
 @interface PostCardViewController ()
 @property NSMutableArray *arrayOfPostCards;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property NSInteger popularCounter;
+@property CGPoint startSwipePoint;
+@property PostCardsCollectionView *postCardsCollectionView;
 @end
 
 @implementation PostCardViewController
@@ -27,7 +30,12 @@
     self.popularCounter = 0;
     self.arrayOfPostCards = [[NSMutableArray alloc] initWithCapacity:10];
     [self downloadCards:self.popularCounter];
-	// Do any additional setup after loading the view, typically from a nib.
+    self.postCardsCollectionView = (PostCardsCollectionView *) self.collectionView;
+    self.postCardsCollectionView.arrayOfData = self.arrayOfPostCards;
+    self.collectionView.delegate = self.postCardsCollectionView;
+    self.collectionView.dataSource = self.postCardsCollectionView;
+    [self.postCardsCollectionView registerGestures];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,30 +61,6 @@
         downloader.callBackDelegate = self;
         [downloader downloadImageForPostCardObject:self.arrayOfPostCards[i]];
     }
-}
-
--(NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.arrayOfPostCards.count;
-}
-
-
--(UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"imageCell" forIndexPath:indexPath];
-    PostCardObject *postCardObj = self.arrayOfPostCards[indexPath.row];
-    UIImageView *imageViewFromCell = (UIImageView *) [cell viewWithTag:1];
-    if (postCardObj.imageCard) {
-        imageViewFromCell.image = postCardObj.imageCard;
-    }
-    else {
-        imageViewFromCell.image = [UIImage imageNamed:@"logo.png"];
-    }
-    if (indexPath.row == self.arrayOfPostCards.count-2) {
-       [self downloadCards:++self.popularCounter];
-       //[self.collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObjects:NSIndex, nil]];
-        [StatusLabel showLabelWithStatusOfAction:@"Обновляем" forView:self.view];
-        //[self addDummyPostCardsAndUpdateTableView];
-    }
-    return cell;
 }
 
 -(void) addDummyPostCardsAndUpdateTableView {
@@ -109,9 +93,8 @@
     UINavigationController *unc = [[UINavigationController alloc] initWithRootViewController:pcVC];
     [unc setNavigationBarHidden:YES];
     [self presentViewController:unc animated:YES completion:^{
-        NSLog(@"Opening modal view");
+        NSLog(@"Opefning modal view");
     }];
-
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F218353B1671BAF8008200B3 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = F21835311671BAF8008200B3 /* Icon-72.png */; };
+		F218353C1671BAF8008200B3 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F21835321671BAF8008200B3 /* Icon-72@2x.png */; };
+		F218353D1671BAF8008200B3 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = F21835331671BAF8008200B3 /* Icon-Small-50.png */; };
+		F218353E1671BAF8008200B3 /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F21835341671BAF8008200B3 /* Icon-Small-50@2x.png */; };
+		F218353F1671BAF8008200B3 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = F21835351671BAF8008200B3 /* Icon-Small.png */; };
+		F21835401671BAF8008200B3 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F21835361671BAF8008200B3 /* Icon-Small@2x.png */; };
+		F21835411671BAF8008200B3 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F21835371671BAF8008200B3 /* Icon.png */; };
+		F21835421671BAF8008200B3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F21835381671BAF8008200B3 /* Icon@2x.png */; };
+		F21835431671BAF8008200B3 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = F21835391671BAF8008200B3 /* iTunesArtwork.png */; };
+		F21835441671BAF8008200B3 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F218353A1671BAF8008200B3 /* iTunesArtwork@2x.png */; };
+		F218354B1671ED38008200B3 /* PostCardsCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F218354A1671ED38008200B3 /* PostCardsCollectionView.m */; };
 		F22C9456166642510067F482 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F22C9455166642510067F482 /* logo.png */; };
 		F22C94591668DA460067F482 /* PostCardDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F22C94581668DA460067F482 /* PostCardDetailedViewController.m */; };
 		F271110F16622A7E00087E6E /* PostCardObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F271110E16622A7E00087E6E /* PostCardObject.m */; };
@@ -29,6 +40,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F21835311671BAF8008200B3 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Resources/Icons/Icon-72.png"; sourceTree = "<group>"; };
+		F21835321671BAF8008200B3 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72@2x.png"; path = "Resources/Icons/Icon-72@2x.png"; sourceTree = "<group>"; };
+		F21835331671BAF8008200B3 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "Resources/Icons/Icon-Small-50.png"; sourceTree = "<group>"; };
+		F21835341671BAF8008200B3 /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50@2x.png"; path = "Resources/Icons/Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		F21835351671BAF8008200B3 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "Resources/Icons/Icon-Small.png"; sourceTree = "<group>"; };
+		F21835361671BAF8008200B3 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "Resources/Icons/Icon-Small@2x.png"; sourceTree = "<group>"; };
+		F21835371671BAF8008200B3 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Icons/Icon.png; sourceTree = "<group>"; };
+		F21835381671BAF8008200B3 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Resources/Icons/Icon@2x.png"; sourceTree = "<group>"; };
+		F21835391671BAF8008200B3 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iTunesArtwork.png; path = Resources/Icons/iTunesArtwork.png; sourceTree = "<group>"; };
+		F218353A1671BAF8008200B3 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iTunesArtwork@2x.png"; path = "Resources/Icons/iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		F21835491671ED38008200B3 /* PostCardsCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCardsCollectionView.h; sourceTree = "<group>"; };
+		F218354A1671ED38008200B3 /* PostCardsCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCardsCollectionView.m; sourceTree = "<group>"; };
 		F22C9455166642510067F482 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Resources/logo.png; sourceTree = "<group>"; };
 		F22C94571668DA460067F482 /* PostCardDetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCardDetailedViewController.h; sourceTree = "<group>"; };
 		F22C94581668DA460067F482 /* PostCardDetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCardDetailedViewController.m; sourceTree = "<group>"; };
@@ -75,9 +98,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F218352F1671BAE8008200B3 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				F21835311671BAF8008200B3 /* Icon-72.png */,
+				F21835321671BAF8008200B3 /* Icon-72@2x.png */,
+				F21835331671BAF8008200B3 /* Icon-Small-50.png */,
+				F21835341671BAF8008200B3 /* Icon-Small-50@2x.png */,
+				F21835351671BAF8008200B3 /* Icon-Small.png */,
+				F21835361671BAF8008200B3 /* Icon-Small@2x.png */,
+				F21835371671BAF8008200B3 /* Icon.png */,
+				F21835381671BAF8008200B3 /* Icon@2x.png */,
+				F21835391671BAF8008200B3 /* iTunesArtwork.png */,
+				F218353A1671BAF8008200B3 /* iTunesArtwork@2x.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
 		F22C9453166642380067F482 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F218352F1671BAE8008200B3 /* Icons */,
 				F2E1FD48166A1A8F0073FAF2 /* Delete.png */,
 				F22C9455166642510067F482 /* logo.png */,
 			);
@@ -95,6 +136,10 @@
 		F271111016622A8100087E6E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F28A795F16611227003D9D8F /* PopularDownloader.h */,
+				F28A796016611228003D9D8F /* PopularDownloader.m */,
+				F271111116622BE400087E6E /* ImageDownloader.h */,
+				F271111216622BE400087E6E /* ImageDownloader.m */,
 				F2E1FD53166A45650073FAF2 /* StatusLabel.h */,
 				F2E1FD54166A45650073FAF2 /* StatusLabel.m */,
 				F271110D16622A7E00087E6E /* PostCardObject.h */,
@@ -139,13 +184,11 @@
 				F28A794B16610D12003D9D8F /* PostCardAppDelegate.h */,
 				F28A794C16610D12003D9D8F /* PostCardAppDelegate.m */,
 				F28A795416610D12003D9D8F /* MainStoryboard.storyboard */,
+				F21835491671ED38008200B3 /* PostCardsCollectionView.h */,
+				F218354A1671ED38008200B3 /* PostCardsCollectionView.m */,
 				F28A795716610D12003D9D8F /* PostCardViewController.h */,
 				F28A795816610D12003D9D8F /* PostCardViewController.m */,
 				F28A794316610D12003D9D8F /* Supporting Files */,
-				F28A795F16611227003D9D8F /* PopularDownloader.h */,
-				F28A796016611228003D9D8F /* PopularDownloader.m */,
-				F271111116622BE400087E6E /* ImageDownloader.h */,
-				F271111216622BE400087E6E /* ImageDownloader.m */,
 				F22C94571668DA460067F482 /* PostCardDetailedViewController.h */,
 				F22C94581668DA460067F482 /* PostCardDetailedViewController.m */,
 				F2E1FD50166A3F5F0073FAF2 /* PostCardDetailedlViewController.xib */,
@@ -227,6 +270,16 @@
 				F22C9456166642510067F482 /* logo.png in Resources */,
 				F2E1FD49166A1A8F0073FAF2 /* Delete.png in Resources */,
 				F2E1FD52166A3F5F0073FAF2 /* PostCardDetailedlViewController.xib in Resources */,
+				F218353B1671BAF8008200B3 /* Icon-72.png in Resources */,
+				F218353C1671BAF8008200B3 /* Icon-72@2x.png in Resources */,
+				F218353D1671BAF8008200B3 /* Icon-Small-50.png in Resources */,
+				F218353E1671BAF8008200B3 /* Icon-Small-50@2x.png in Resources */,
+				F218353F1671BAF8008200B3 /* Icon-Small.png in Resources */,
+				F21835401671BAF8008200B3 /* Icon-Small@2x.png in Resources */,
+				F21835411671BAF8008200B3 /* Icon.png in Resources */,
+				F21835421671BAF8008200B3 /* Icon@2x.png in Resources */,
+				F21835431671BAF8008200B3 /* iTunesArtwork.png in Resources */,
+				F21835441671BAF8008200B3 /* iTunesArtwork@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +298,7 @@
 				F271111316622BE400087E6E /* ImageDownloader.m in Sources */,
 				F22C94591668DA460067F482 /* PostCardDetailedViewController.m in Sources */,
 				F2E1FD55166A45650073FAF2 /* StatusLabel.m in Sources */,
+				F218354B1671ED38008200B3 /* PostCardsCollectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
