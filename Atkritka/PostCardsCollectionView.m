@@ -39,11 +39,18 @@
 
 -(UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [self dequeueReusableCellWithReuseIdentifier:@"postCardCell" forIndexPath:indexPath];
+    //get scrollview of cell and set its contentOffset point to 0,0.
+    //this is done because UICollectionView dequeues and reuses the same view and scroll is not reset.
+    //that is why we have several uiscrolls swiped 
     UIScrollView *scrollView = (UIScrollView *) [cell.contentView viewWithTag:1];
+    [scrollView setContentOffset:CGPointMake(0, 0)];
     UIView *view = [scrollView viewWithTag:3];
     UILabel *label = (UILabel*) [view viewWithTag:5];
     label.text = [NSString stringWithFormat:@"%i", indexPath.row];
+    NSLog(@"generated cell #%i", indexPath.row);
+    
     /*UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 450, 187)];
+    
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 290, 187)];
     imageView.image = [UIImage imageNamed:@"iTunesArtwork"];
     imageView.tag = 2;
