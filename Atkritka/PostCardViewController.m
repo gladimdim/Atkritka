@@ -109,6 +109,7 @@
 - (IBAction)segmentedControlChanged:(id)sender {
     [self.arrayOfPostCards removeAllObjects];
     [self.collectionView reloadData];
+    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionBottom animated:NO];
     [self downloadCards:0];
 }
 
