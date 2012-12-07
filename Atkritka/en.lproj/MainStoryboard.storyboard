@@ -10,17 +10,18 @@
             <objects>
                 <viewController id="2" customClass="PostCardViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lSW-4f-Ui5">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lSW-4f-Ui5">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" type="user" id="glR-jk-6gA"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="Популярные" width="115"/>
-                                    <segment title="Новые" width="80"/>
-                                    <segment title="По рейтингу" width="125"/>
+                                    <segment title="Популярные" width="120"/>
+                                    <segment title="Новые" width="60"/>
+                                    <segment title="Все" width="50"/>
+                                    <segment title="Случайные"/>
                                 </segments>
                                 <connections>
                                     <action selector="segmentedControlChanged:" destination="2" eventType="valueChanged" id="p3H-oz-LQN"/>
@@ -29,6 +30,9 @@
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EEw-Fe-vxI" customClass="PostCardsCollectionView">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="341" constant="502" type="user" id="Prz-eD-BWo"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="Rns-G4-9v7">
                                     <size key="itemSize" width="290" height="187"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -121,10 +125,10 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="lSW-4f-Ui5" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="49X-by-WWb"/>
-                            <constraint firstItem="lSW-4f-Ui5" firstAttribute="top" secondItem="3" secondAttribute="top" constant="10" type="user" id="4Vv-2j-ZLl"/>
-                            <constraint firstItem="EEw-Fe-vxI" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="A9P-lC-AzQ"/>
-                            <constraint firstItem="EEw-Fe-vxI" firstAttribute="top" secondItem="lSW-4f-Ui5" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Fk7-cD-3Y1"/>
+                            <constraint firstItem="lSW-4f-Ui5" firstAttribute="top" secondItem="EEw-Fe-vxI" secondAttribute="bottom" priority="659" constant="8" symbolic="YES" type="user" id="8jr-tL-fPP"/>
                             <constraint firstItem="EEw-Fe-vxI" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="MSQ-Ai-6Gr"/>
+                            <constraint firstAttribute="bottom" secondItem="lSW-4f-Ui5" secondAttribute="bottom" constant="2" type="user" id="Pq4-oq-X5d"/>
+                            <constraint firstItem="EEw-Fe-vxI" firstAttribute="top" secondItem="3" secondAttribute="top" type="user" id="eS7-Yx-Q9Q"/>
                             <constraint firstItem="EEw-Fe-vxI" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="tZq-GE-NAq"/>
                         </constraints>
                     </view>
@@ -185,13 +189,10 @@
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
         </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
-        </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>
