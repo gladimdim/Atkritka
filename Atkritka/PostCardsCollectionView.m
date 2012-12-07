@@ -26,6 +26,9 @@
     UISwipeGestureRecognizer *swipeRightGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGestureRecognizerHandler:)];
     swipeRightGesture.direction = UISwipeGestureRecognizerDirectionRight;
     [self addGestureRecognizer:swipeRightGesture];
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureHandler:)];
+    [self addGestureRecognizer:tapGesture];
 }
 
 -(NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -36,8 +39,7 @@
 
 -(UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [self dequeueReusableCellWithReuseIdentifier:@"postCardCell" forIndexPath:indexPath];
-    UIScrollView *scrollView = [cell.contentView viewWithTag:1];
-
+    UIScrollView *scrollView = (UIScrollView *) [cell.contentView viewWithTag:1];
     UIView *view = [scrollView viewWithTag:3];
     UILabel *label = (UILabel*) [view viewWithTag:5];
     label.text = [NSString stringWithFormat:@"%i", indexPath.row];
@@ -71,6 +73,7 @@
      [StatusLabel showLabelWithStatusOfAction:@"Обновляем" forView:self.view];
      //[self addDummyPostCardsAndUpdateTableView];
      }*/
+    
     return cell;
 }
 
@@ -94,19 +97,31 @@
         [scrollView setContentOffset:scrollToPoint animated:YES];
        // [self scrollLastSwipedCellAtIndexPath:swipedAtIndexPath];
     }
-    [self scrollLastSwipedCellWithNewIndexPath:swipedAtIndexPath];
+
+    [self scrollLastSwipedCellWithNewIndexPath:swipedAtIndexPath animated:YES];
+    NSIndexPath *cheat = [NSIndexPath indexPathForRow:3 inSection:0];
+    cell = [self cellForItemAtIndexPath:cheat];
+    scrollView = (UIScrollView *) [cell viewWithTag:1];
+    scrollContentOffset = scrollView.contentOffset;
+    NSLog(@"scroll log cheated: %@", NSStringFromCGPoint(scrollContentOffset));
+    
+    
     NSLog(@"swiped cell %i", swipedAtIndexPath.row);
 }
 
--(void) scrollLastSwipedCellWithNewIndexPath:(NSIndexPath *) newIndexPathForSwiped {
+-(void) scrollLastSwipedCellWithNewIndexPath:(NSIndexPath *) newIndexPathForSwiped animated:(BOOL) animated {
     if (self.lastSwipedCollectionViewCell == newIndexPathForSwiped) {
         return;
     }
     
     UICollectionViewCell *cell = [self cellForItemAtIndexPath:self.lastSwipedCollectionViewCell];
     UIScrollView *scroll = (UIScrollView *) [cell viewWithTag:1];
-    [scroll setContentOffset:CGPointMake(0, 0) animated:YES];
+    [scroll setContentOffset:CGPointMake(0, 0) animated:animated];
     self.lastSwipedCollectionViewCell = newIndexPathForSwiped;
+}
+
+-(void) tapGestureHandler:(UITapGestureRecognizer *)sender {
+    [self scrollLastSwipedCellWithNewIndexPath:nil animated:YES];
 }
 
 @end
