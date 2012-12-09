@@ -18,6 +18,7 @@
 		F21835431671BAF8008200B3 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = F21835391671BAF8008200B3 /* iTunesArtwork.png */; };
 		F21835441671BAF8008200B3 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F218353A1671BAF8008200B3 /* iTunesArtwork@2x.png */; };
 		F218354B1671ED38008200B3 /* PostCardsCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F218354A1671ED38008200B3 /* PostCardsCollectionView.m */; };
+		F218359516744CE0008200B3 /* custom_grouped.png in Resources */ = {isa = PBXBuildFile; fileRef = F218359416744CE0008200B3 /* custom_grouped.png */; };
 		F22C9456166642510067F482 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F22C9455166642510067F482 /* logo.png */; };
 		F22C94591668DA460067F482 /* PostCardDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F22C94581668DA460067F482 /* PostCardDetailedViewController.m */; };
 		F271110F16622A7E00087E6E /* PostCardObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F271110E16622A7E00087E6E /* PostCardObject.m */; };
@@ -52,6 +53,8 @@
 		F218353A1671BAF8008200B3 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iTunesArtwork@2x.png"; path = "Resources/Icons/iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		F21835491671ED38008200B3 /* PostCardsCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCardsCollectionView.h; sourceTree = "<group>"; };
 		F218354A1671ED38008200B3 /* PostCardsCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCardsCollectionView.m; sourceTree = "<group>"; };
+		F218358E16744544008200B3 /* CardsManagementProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CardsManagementProtocol.h; path = Protocols/CardsManagementProtocol.h; sourceTree = "<group>"; };
+		F218359416744CE0008200B3 /* custom_grouped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = custom_grouped.png; path = ../../../Downloads/custom_grouped.png; sourceTree = "<group>"; };
 		F22C9455166642510067F482 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Resources/logo.png; sourceTree = "<group>"; };
 		F22C94571668DA460067F482 /* PostCardDetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCardDetailedViewController.h; sourceTree = "<group>"; };
 		F22C94581668DA460067F482 /* PostCardDetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCardDetailedViewController.m; sourceTree = "<group>"; };
@@ -118,6 +121,7 @@
 		F22C9453166642380067F482 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F218359416744CE0008200B3 /* custom_grouped.png */,
 				F218352F1671BAE8008200B3 /* Icons */,
 				F2E1FD48166A1A8F0073FAF2 /* Delete.png */,
 				F22C9455166642510067F482 /* logo.png */,
@@ -129,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				F271110C16622A5100087E6E /* DownloadCallBack.h */,
+				F218358E16744544008200B3 /* CardsManagementProtocol.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 				F21835421671BAF8008200B3 /* Icon@2x.png in Resources */,
 				F21835431671BAF8008200B3 /* iTunesArtwork.png in Resources */,
 				F21835441671BAF8008200B3 /* iTunesArtwork@2x.png in Resources */,
+				F218359516744CE0008200B3 /* custom_grouped.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

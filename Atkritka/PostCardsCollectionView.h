@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CardsManagementProtocol.h"
 
 @interface PostCardsCollectionView : UICollectionView <UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate>
 @property NSMutableArray *arrayOfData;
 -(void) registerGestures;
+@property id <CardsManagementProtocol> callBackDelegate;
 @end

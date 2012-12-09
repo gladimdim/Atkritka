@@ -15,7 +15,7 @@
         [statusLabel removeFromSuperview];
     }
     CGSize winSize = view.bounds.size;
-    CGRect labelRect = CGRectMake(10, winSize.height-30, 300, 22);
+    CGRect labelRect = CGRectMake(0, 0, 150, 22);
     statusLabel = [[UILabel alloc] initWithFrame:labelRect];
     statusLabel.font = [UIFont systemFontOfSize:13];
     statusLabel.backgroundColor = [UIColor blackColor];

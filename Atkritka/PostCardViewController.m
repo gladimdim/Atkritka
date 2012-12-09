@@ -32,6 +32,7 @@
     [self downloadCards:self.popularCounter];
     self.postCardsCollectionView = (PostCardsCollectionView *) self.collectionView;
     self.postCardsCollectionView.arrayOfData = self.arrayOfPostCards;
+    self.postCardsCollectionView.callBackDelegate = self;
     self.collectionView.delegate = self.postCardsCollectionView;
     self.collectionView.dataSource = self.postCardsCollectionView;
     [self.postCardsCollectionView registerGestures];
@@ -107,9 +108,9 @@
 }
 
 - (IBAction)segmentedControlChanged:(id)sender {
+    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionBottom animated:NO];
     [self.arrayOfPostCards removeAllObjects];
     [self.collectionView reloadData];
-    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionBottom animated:NO];
     [self downloadCards:0];
 }
 

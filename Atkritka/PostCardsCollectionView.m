@@ -8,12 +8,20 @@
 
 #import "PostCardsCollectionView.h"
 #import "PostCardObject.h"
+#import "StatusLabel.h"
 
 @interface PostCardsCollectionView ()
 @property CGPoint startSwipePoint;
 @property UIGestureRecognizer *gesture;
 @property NSIndexPath *lastSwipedCollectionViewCell;
+@property int popularCounter;
 @end
+
+#define TAG_SCROLLVIEW 1
+#define TAG_IMAGEVIEW 2
+#define TAG_AUTHOR_LABEL 5
+#define TAG_VIEW_CONTAINTER 3
+#define TAG_CREATEDAT_LABEL 6
 
 @implementation PostCardsCollectionView
 
@@ -32,8 +40,7 @@
 }
 
 -(NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    //return self.arrayOfPostCards.count;
-    return 20;
+    return self.arrayOfData.count;
 }
 
 
@@ -42,44 +49,37 @@
     //get scrollview of cell and set its contentOffset point to 0,0.
     //this is done because UICollectionView dequeues and reuses the same view and scroll is not reset.
     //that is why we have several uiscrolls swiped 
-    UIScrollView *scrollView = (UIScrollView *) [cell.contentView viewWithTag:1];
+    UIScrollView *scrollView = (UIScrollView *) [cell.contentView viewWithTag:TAG_SCROLLVIEW];
     [scrollView setContentOffset:CGPointMake(0, 0)];
+    /*
     UIView *view = [scrollView viewWithTag:3];
     UILabel *label = (UILabel*) [view viewWithTag:5];
     label.text = [NSString stringWithFormat:@"%i", indexPath.row];
-    NSLog(@"generated cell #%i", indexPath.row);
+    NSLog(@"generated cell #%i", indexPath.row);*/
     
-    /*UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 450, 187)];
-    
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 290, 187)];
-    imageView.image = [UIImage imageNamed:@"iTunesArtwork"];
-    imageView.tag = 2;
-    [scrollView addSubview:imageView];
-    
-    UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(300, 0, 244, 187)];
-    containerView.backgroundColor = [UIColor grayColor];
-    
-    [scrollView addSubview:containerView];
-    
-    scrollView.tag = 1;
-    [cell.contentView addSubview:scrollView];
-    */
-
-    /*
-     PostCardObject *postCardObj = self.arrayOfPostCards[indexPath.row];
-     UIImageView *imageViewFromCell = (UIImageView *) [cell viewWithTag:1];
+     PostCardObject *postCardObj = self.arrayOfData[indexPath.row];
+     UIImageView *imageViewFromCell = (UIImageView *) [scrollView viewWithTag:TAG_IMAGEVIEW];
      if (postCardObj.imageCard) {
-     imageViewFromCell.image = postCardObj.imageCard;
+         imageViewFromCell.image = postCardObj.imageCard;
      }
      else {
-     imageViewFromCell.image = [UIImage imageNamed:@"logo.png"];
+         imageViewFromCell.image = [UIImage imageNamed:@"logo.png"];
      }
-     if (indexPath.row == self.arrayOfPostCards.count-2) {
-     [self downloadCards:++self.popularCounter];
-     //[self.collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObjects:NSIndex, nil]];
-     [StatusLabel showLabelWithStatusOfAction:@"Обновляем" forView:self.view];
-     //[self addDummyPostCardsAndUpdateTableView];
-     }*/
+    UIView *containerView = (UIView *) [scrollView viewWithTag:TAG_VIEW_CONTAINTER];
+    UILabel *labelAuthor = (UILabel*) [containerView viewWithTag:TAG_AUTHOR_LABEL];
+    labelAuthor.text = postCardObj.author;
+    
+    UILabel *labelCreatedAt = (UILabel *) [containerView viewWithTag:TAG_CREATEDAT_LABEL];
+    labelCreatedAt.text = postCardObj.creationDate;
+    
+    if (indexPath.row == self.arrayOfData.count-2) {
+         [self.callBackDelegate downloadCards:++self.popularCounter];
+         //[self.collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObjects:NSIndex, nil]];
+        UIViewController *con = (UIViewController *) self.callBackDelegate;
+        
+         [StatusLabel showLabelWithStatusOfAction:@"Обновляем" forView:con.view];
+         //[self.callBackDelegate addDummyPostCardsAndUpdateTableView];
+    }
     
     return cell;
 }
@@ -93,13 +93,13 @@
     CGPoint scrollContentOffset = scrollView.contentOffset;
     CGPoint scrollToPoint;
     NSLog(@"scrollview contentoffset: %@ and direction: %i", NSStringFromCGPoint(scrollContentOffset), sender.direction);
-    if (scrollContentOffset.x == 200 && sender.direction == UISwipeGestureRecognizerDirectionRight) {
+    if (scrollContentOffset.x == 150 && sender.direction == UISwipeGestureRecognizerDirectionRight) {
         scrollToPoint = CGPointMake(0, 0);
         [scrollView setContentOffset:scrollToPoint animated:YES];
       //  [self scrollLastSwipedCellAtIndexPath:swipedAtIndexPath];
     }
     else if (scrollContentOffset.x == 0 && sender.direction == UISwipeGestureRecognizerDirectionLeft){
-        scrollToPoint = CGPointMake(200, 0);
+        scrollToPoint = CGPointMake(150, 0);
         [scrollView setContentOffset:scrollToPoint animated:YES];
        // [self scrollLastSwipedCellAtIndexPath:swipedAtIndexPath];
     }
