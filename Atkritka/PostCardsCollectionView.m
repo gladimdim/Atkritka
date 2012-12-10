@@ -9,6 +9,7 @@
 #import "PostCardsCollectionView.h"
 #import "PostCardObject.h"
 #import "StatusLabel.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface PostCardsCollectionView ()
 @property CGPoint startSwipePoint;
@@ -63,9 +64,14 @@
          imageViewFromCell.image = postCardObj.imageCard;
      }
      else {
-         imageViewFromCell.image = [UIImage imageNamed:@"logo.png"];
+         imageViewFromCell.image = [UIImage imageNamed:@"iTunesArtWork"];
      }
+    
+    //getting container view (view which is swipped to the left)
+    //setting its background color and rounded corners
     UIView *containerView = (UIView *) [scrollView viewWithTag:TAG_VIEW_CONTAINTER];
+    containerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"custom_grouped"]];
+    containerView.layer.cornerRadius = 5;
     UILabel *labelAuthor = (UILabel*) [containerView viewWithTag:TAG_AUTHOR_LABEL];
     labelAuthor.text = postCardObj.author;
     
