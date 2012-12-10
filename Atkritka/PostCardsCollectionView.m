@@ -64,13 +64,13 @@
          imageViewFromCell.image = postCardObj.imageCard;
      }
      else {
-         imageViewFromCell.image = [UIImage imageNamed:@"iTunesArtWork"];
+         imageViewFromCell.image = [UIImage imageNamed:@"iTunesArtwork"];
      }
     
     //getting container view (view which is swipped to the left)
     //setting its background color and rounded corners
     UIView *containerView = (UIView *) [scrollView viewWithTag:TAG_VIEW_CONTAINTER];
-    containerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"custom_grouped"]];
+//    containerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"custom_grouped"]];
     containerView.layer.cornerRadius = 5;
     UILabel *labelAuthor = (UILabel*) [containerView viewWithTag:TAG_AUTHOR_LABEL];
     labelAuthor.text = postCardObj.author;
@@ -99,13 +99,13 @@
     CGPoint scrollContentOffset = scrollView.contentOffset;
     CGPoint scrollToPoint;
     NSLog(@"scrollview contentoffset: %@ and direction: %i", NSStringFromCGPoint(scrollContentOffset), sender.direction);
-    if (scrollContentOffset.x == 150 && sender.direction == UISwipeGestureRecognizerDirectionRight) {
+    if (scrollContentOffset.x == 140 && sender.direction == UISwipeGestureRecognizerDirectionRight) {
         scrollToPoint = CGPointMake(0, 0);
         [scrollView setContentOffset:scrollToPoint animated:YES];
       //  [self scrollLastSwipedCellAtIndexPath:swipedAtIndexPath];
     }
     else if (scrollContentOffset.x == 0 && sender.direction == UISwipeGestureRecognizerDirectionLeft){
-        scrollToPoint = CGPointMake(150, 0);
+        scrollToPoint = CGPointMake(140, 0);
         [scrollView setContentOffset:scrollToPoint animated:YES];
        // [self scrollLastSwipedCellAtIndexPath:swipedAtIndexPath];
     }

@@ -27,6 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"segment_background"]];
     self.popularCounter = 0;
     self.arrayOfPostCards = [[NSMutableArray alloc] initWithCapacity:10];
     [self downloadCards:self.popularCounter];
