@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DownloadCallBack.h"
 
 @interface PopularDownloader : NSObject <NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 -(void) getCardsDelegate:(id) callBackDelegate section:(NSString *) section forPageId:(NSInteger) pageId;
-
+-(void) getRandomCard:(id <DownloadCallBack> ) callBackDelegate;
 @end

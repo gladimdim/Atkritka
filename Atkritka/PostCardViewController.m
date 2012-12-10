@@ -53,6 +53,9 @@
         [downloader getCardsDelegate:self section:@"new&" forPageId:pageId];
     else if (self.segmentedControl.selectedSegmentIndex == 2)
         [downloader getCardsDelegate:self section:@"all&" forPageId:pageId];
+    else if (self.segmentedControl.selectedSegmentIndex == 3) {
+        [downloader getRandomCard:self];
+    }
 }
 
 -(void) postCardsDownloaded:(NSArray *)arrayOfPostCards {

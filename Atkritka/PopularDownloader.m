@@ -8,7 +8,6 @@
 
 #import "PopularDownloader.h"
 #import "PostCardObject.h"
-#import "DownloadCallBack.h"
 
 @interface PopularDownloader()
 @property NSMutableData *receivedData;
@@ -29,6 +28,20 @@
     else {
         self.receivedData = nil;
     }
+}
+
+-(void) getRandomCard: (id <DownloadCallBack>) callBackDelegate {
+    self.callBackDelegate = callBackDelegate;
+    NSURL *popularJsonURL = [NSURL URLWithString:@"http://atkritka.com/random_ok/?json=Y"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:popularJsonURL];
+    NSURLConnection *connection = [NSURLConnection connectionWithRequest:request delegate:self];
+    if (connection) {
+        self.receivedData = [[NSMutableData alloc] init];
+    }
+    else {
+        self.receivedData = nil;
+    }
+
 }
 
 -(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
@@ -56,13 +69,7 @@
         obj.uniqueId = currentKey;
         obj.rating = [dictCard valueForKey:@"rating"];
         obj.creationDate = [dictCard valueForKey:@"date"];
-        NSArray *splitString = [[dictCard valueForKey:@"title"] componentsSeparatedByString:@"by"];
-        if (splitString.count > 1) {
-            NSString *authorWithOutRoundBraceLeft = splitString[1];
-            NSString *authorWithoutRoundBraceRight = [authorWithOutRoundBraceLeft stringByReplacingOccurrencesOfString:@"(" withString:@""];
-            obj.author = [authorWithoutRoundBraceRight stringByReplacingOccurrencesOfString:@")" withString:@""];
-        }
-
+        obj.author = [dictCard valueForKey:@"author"];
         [self.arrayOfPostCards addObject:obj];
     }
     [self.callBackDelegate postCardsDownloaded:self.arrayOfPostCards];
