@@ -23,6 +23,7 @@
 #define TAG_AUTHOR_LABEL 5
 #define TAG_VIEW_CONTAINTER 3
 #define TAG_CREATEDAT_LABEL 6
+#define TAG_RATING_LABEL 7
 
 @implementation PostCardsCollectionView
 
@@ -78,12 +79,15 @@
     UILabel *labelCreatedAt = (UILabel *) [containerView viewWithTag:TAG_CREATEDAT_LABEL];
     labelCreatedAt.text = postCardObj.creationDate;
     
+    UILabel *labelRating = (UILabel *) [containerView viewWithTag:TAG_RATING_LABEL];
+    labelRating.text = postCardObj.rating;
+    
     if (indexPath.row == self.arrayOfData.count-2) {
          [self.callBackDelegate downloadCards:++self.popularCounter];
          //[self.collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObjects:NSIndex, nil]];
         UIViewController *con = (UIViewController *) self.callBackDelegate;
         
-         [StatusLabel showLabelWithStatusOfAction:@"Обновляем" forView:con.view];
+        [StatusLabel showLabelWithStatusOfAction:@"Обновляем" forView:con.view position:@"center"];
          //[self.callBackDelegate addDummyPostCardsAndUpdateTableView];
     }
     

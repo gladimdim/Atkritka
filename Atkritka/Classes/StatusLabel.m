@@ -9,14 +9,26 @@
 #import "StatusLabel.h"
 
 @implementation StatusLabel
-+(void) showLabelWithStatusOfAction:(NSString *) stringAction forView:(UIView *) view{
++(void) showLabelWithStatusOfAction:(NSString *) stringAction forView:(UIView *) view position:(NSString *)position{
     UILabel *statusLabel = (UILabel*) [view viewWithTag:5553];
     if (statusLabel) {
         [statusLabel removeFromSuperview];
     }
+    
     CGSize winSize = view.bounds.size;
-    CGRect labelRect = CGRectMake(0, 0, 150, 22);
+    int labelWidth = 150;
+    CGRect labelRect;
+    if ([position isEqualToString:@"left"]) {
+        labelRect = CGRectMake(0, 0, labelWidth, 22);
+    }
+    else if ([position isEqualToString:@"right"]) {
+        labelRect = CGRectMake(winSize.width - labelWidth, 0, labelWidth, 22);
+    }
+    else if ([position isEqualToString:@"center"]) {
+        labelRect = CGRectMake(winSize.width /2 - labelWidth /2 , 0, labelWidth, 22);
+    }
     statusLabel = [[UILabel alloc] initWithFrame:labelRect];
+    statusLabel.textAlignment = NSTextAlignmentCenter;
     statusLabel.font = [UIFont systemFontOfSize:13];
     statusLabel.backgroundColor = [UIColor blackColor];
     statusLabel.text = stringAction;

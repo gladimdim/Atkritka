@@ -112,6 +112,7 @@
 }
 
 - (IBAction)segmentedControlChanged:(id)sender {
+    [StatusLabel showLabelWithStatusOfAction:@"Updating" forView:self.view position:@"center"];
     if (self.arrayOfPostCards.count > 0) {
         [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionBottom animated:NO];
     }

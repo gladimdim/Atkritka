@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface StatusLabel : NSObject
-+(void) showLabelWithStatusOfAction:(NSString *) stringAction forView:(UIView *) view;
++(void) showLabelWithStatusOfAction:(NSString *) stringAction forView:(UIView *) view position:(NSString *) position;
 @end
