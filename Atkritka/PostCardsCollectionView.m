@@ -103,13 +103,14 @@
     CGPoint scrollContentOffset = scrollView.contentOffset;
     CGPoint scrollToPoint;
     NSLog(@"scrollview contentoffset: %@ and direction: %i", NSStringFromCGPoint(scrollContentOffset), sender.direction);
-    if (scrollContentOffset.x == 140 && sender.direction == UISwipeGestureRecognizerDirectionRight) {
+    int swipeOffset = 145;
+    if (scrollContentOffset.x == swipeOffset && sender.direction == UISwipeGestureRecognizerDirectionRight) {
         scrollToPoint = CGPointMake(0, 0);
         [scrollView setContentOffset:scrollToPoint animated:YES];
       //  [self scrollLastSwipedCellAtIndexPath:swipedAtIndexPath];
     }
     else if (scrollContentOffset.x == 0 && sender.direction == UISwipeGestureRecognizerDirectionLeft){
-        scrollToPoint = CGPointMake(140, 0);
+        scrollToPoint = CGPointMake(swipeOffset, 0);
         [scrollView setContentOffset:scrollToPoint animated:YES];
        // [self scrollLastSwipedCellAtIndexPath:swipedAtIndexPath];
     }
