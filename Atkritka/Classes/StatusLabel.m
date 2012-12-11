@@ -7,6 +7,7 @@
 //
 
 #import "StatusLabel.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation StatusLabel
 +(void) showLabelWithStatusOfAction:(NSString *) stringAction forView:(UIView *) view position:(NSString *)position{
@@ -34,6 +35,7 @@
     statusLabel.text = stringAction;
     statusLabel.textColor = [UIColor whiteColor];
     statusLabel.tag = 5553;
+    statusLabel.layer.cornerRadius = 2;
     [view addSubview:statusLabel];
     statusLabel.alpha = 1;
     [UIView beginAnimations:nil context:NULL];
