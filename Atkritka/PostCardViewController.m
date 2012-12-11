@@ -40,6 +40,10 @@
     
 }
 
+-(void) viewDidAppear:(BOOL)animated {
+    [StatusLabel showLabelWithStatusOfAction:NSLocalizedString(@"Updating", nil) forView:self.view position:@"center"];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
