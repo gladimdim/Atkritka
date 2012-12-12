@@ -47,7 +47,14 @@
 
 
 -(UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [self dequeueReusableCellWithReuseIdentifier:@"postCardCell" forIndexPath:indexPath];
+    UICollectionViewCell *cell;
+    if (self.arrayOfData.count > 1) {
+        cell = [self dequeueReusableCellWithReuseIdentifier:@"postCardCell" forIndexPath:indexPath];
+    }
+    else {
+        cell = [self dequeueReusableCellWithReuseIdentifier:@"randomPostCardCell" forIndexPath:indexPath];
+        cell.contentView.bounds = CGRectMake(0, 0, 320, 400);
+    }
     //get scrollview of cell and set its contentOffset point to 0,0.
     //this is done because UICollectionView dequeues and reuses the same view and scroll is not reset.
     //that is why we have several uiscrolls swiped 
@@ -92,6 +99,16 @@
     }
     
     return cell;
+}
+
+-(CGSize) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.arrayOfData.count == 1) {
+        return CGSizeMake(320, 400);
+    }
+    else {
+        return CGSizeMake(320, 167);
+    }
+
 }
 
 - (void) swipeGestureRecognizerHandler:(UISwipeGestureRecognizer *)sender {

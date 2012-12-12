@@ -62,7 +62,7 @@
     else if (self.segmentedControl.selectedSegmentIndex == 2) {
         [self.postCardDownloader getCardsDelegate:self section:@"all&" forPageId:pageId];
     }
-    else if (self.segmentedControl.selectedSegmentIndex == 3) { 
+    else if (self.segmentedControl.selectedSegmentIndex == 3) {
         [self.postCardDownloader getRandomCard:self];
     }
 }
