@@ -15,6 +15,4 @@
 @interface PostCardViewController : UIViewController <DownloadCallBack, ModalPostCardCallBack, CardsManagementProtocol>
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 - (IBAction)segmentedControlChanged:(id)sender;
-
-
 @end

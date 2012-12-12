@@ -36,7 +36,7 @@
 		F28A795316610D12003D9D8F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F28A795216610D12003D9D8F /* Default-568h@2x.png */; };
 		F28A795616610D12003D9D8F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28A795416610D12003D9D8F /* MainStoryboard.storyboard */; };
 		F28A795916610D12003D9D8F /* PostCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F28A795816610D12003D9D8F /* PostCardViewController.m */; };
-		F28A796116611228003D9D8F /* PopularDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = F28A796016611228003D9D8F /* PopularDownloader.m */; };
+		F28A796116611228003D9D8F /* PostCardDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = F28A796016611228003D9D8F /* PostCardDownloader.m */; };
 		F2E1FD49166A1A8F0073FAF2 /* Delete.png in Resources */ = {isa = PBXBuildFile; fileRef = F2E1FD48166A1A8F0073FAF2 /* Delete.png */; };
 		F2E1FD52166A3F5F0073FAF2 /* PostCardDetailedlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2E1FD50166A3F5F0073FAF2 /* PostCardDetailedlViewController.xib */; };
 		F2E1FD55166A45650073FAF2 /* StatusLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E1FD54166A45650073FAF2 /* StatusLabel.m */; };
@@ -83,8 +83,8 @@
 		F28A795516610D12003D9D8F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		F28A795716610D12003D9D8F /* PostCardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCardViewController.h; sourceTree = "<group>"; };
 		F28A795816610D12003D9D8F /* PostCardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCardViewController.m; sourceTree = "<group>"; };
-		F28A795F16611227003D9D8F /* PopularDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularDownloader.h; sourceTree = "<group>"; };
-		F28A796016611228003D9D8F /* PopularDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularDownloader.m; sourceTree = "<group>"; };
+		F28A795F16611227003D9D8F /* PostCardDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCardDownloader.h; sourceTree = "<group>"; };
+		F28A796016611228003D9D8F /* PostCardDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCardDownloader.m; sourceTree = "<group>"; };
 		F2E1FD48166A1A8F0073FAF2 /* Delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Delete.png; sourceTree = "<group>"; };
 		F2E1FD50166A3F5F0073FAF2 /* PostCardDetailedlViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCardDetailedlViewController.xib; sourceTree = "<group>"; };
 		F2E1FD53166A45650073FAF2 /* StatusLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatusLabel.h; path = Classes/StatusLabel.h; sourceTree = "<group>"; };
@@ -147,8 +147,8 @@
 		F271111016622A8100087E6E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F28A795F16611227003D9D8F /* PopularDownloader.h */,
-				F28A796016611228003D9D8F /* PopularDownloader.m */,
+				F28A795F16611227003D9D8F /* PostCardDownloader.h */,
+				F28A796016611228003D9D8F /* PostCardDownloader.m */,
 				F271111116622BE400087E6E /* ImageDownloader.h */,
 				F271111216622BE400087E6E /* ImageDownloader.m */,
 				F2E1FD53166A45650073FAF2 /* StatusLabel.h */,
@@ -307,7 +307,7 @@
 				F28A794916610D12003D9D8F /* main.m in Sources */,
 				F28A794D16610D12003D9D8F /* PostCardAppDelegate.m in Sources */,
 				F28A795916610D12003D9D8F /* PostCardViewController.m in Sources */,
-				F28A796116611228003D9D8F /* PopularDownloader.m in Sources */,
+				F28A796116611228003D9D8F /* PostCardDownloader.m in Sources */,
 				F271110F16622A7E00087E6E /* PostCardObject.m in Sources */,
 				F271111316622BE400087E6E /* ImageDownloader.m in Sources */,
 				F22C94591668DA460067F482 /* PostCardDetailedViewController.m in Sources */,

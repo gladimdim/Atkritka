@@ -7,7 +7,7 @@
 //
 
 #import "PostCardViewController.h"
-#import "PopularDownloader.h"
+#import "PostCardDownloader.h"
 #import "PostCardObject.h"
 #import "ImageDownloader.h"
 #import "PostCardDetailedViewController.h"
@@ -20,6 +20,7 @@
 @property NSInteger popularCounter;
 @property CGPoint startSwipePoint;
 @property PostCardsCollectionView *postCardsCollectionView;
+@property PostCardDownloader *postCardDownloader;
 @end
 
 @implementation PostCardViewController
@@ -51,15 +52,18 @@
 }
 
 -(void) downloadCards:(NSInteger ) pageId {
-    PopularDownloader *downloader = [[PopularDownloader alloc]init];
-    if (self.segmentedControl.selectedSegmentIndex == 0 )
-        [downloader getCardsDelegate:self section:@"" forPageId:pageId];
-    else if (self.segmentedControl.selectedSegmentIndex == 1)
-        [downloader getCardsDelegate:self section:@"new&" forPageId:pageId];
-    else if (self.segmentedControl.selectedSegmentIndex == 2)
-        [downloader getCardsDelegate:self section:@"all&" forPageId:pageId];
-    else if (self.segmentedControl.selectedSegmentIndex == 3) {
-        [downloader getRandomCard:self];
+    self.postCardDownloader = [[PostCardDownloader alloc] init];
+    if (self.segmentedControl.selectedSegmentIndex == 0 ) {
+        [self.postCardDownloader getCardsDelegate:self section:@"" forPageId:pageId];
+    }
+    else if (self.segmentedControl.selectedSegmentIndex == 1) {
+        [self.postCardDownloader getCardsDelegate:self section:@"new&" forPageId:pageId];
+    }
+    else if (self.segmentedControl.selectedSegmentIndex == 2) {
+        [self.postCardDownloader getCardsDelegate:self section:@"all&" forPageId:pageId];
+    }
+    else if (self.segmentedControl.selectedSegmentIndex == 3) { 
+        [self.postCardDownloader getRandomCard:self];
     }
 }
 
@@ -116,6 +120,10 @@
 }
 
 - (IBAction)segmentedControlChanged:(id)sender {
+    //reset current downloader so not yet loaded post cards are not loaded to new view
+    self.postCardDownloader.callBackDelegate = nil;
+    self.postCardDownloader = nil;
+    self.postCardDownloader = [[PostCardDownloader alloc] init];
     [StatusLabel showLabelWithStatusOfAction:@"Updating" forView:self.view position:@"center"];
     if (self.arrayOfPostCards.count > 0) {
         [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionBottom animated:NO];
