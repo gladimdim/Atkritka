@@ -13,6 +13,8 @@
 #import "PostCardDetailedViewController.h"
 #import "StatusLabel.h"
 #import "PostCardsCollectionView.h"
+#import "PostCardRater.h"
+#import "Authorizer.h"
 
 @interface PostCardViewController ()
 @property NSMutableArray *arrayOfPostCards;
@@ -137,5 +139,41 @@
     [self dismissViewControllerAnimated:YES completion:^ {
         NSLog(@"Closed modal view");
     }];
+}
+
+-(void) ratePostCard:(PostCardObject *) postCard goodRating:(BOOL) rating {
+   /* Authorizer *authorizer = [[Authorizer alloc] init];
+    [authorizer authorizeUser];
+    */
+    NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    NSArray *array = [storage cookies];
+    [storage setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];
+    PostCardRater *rater = [[PostCardRater alloc] init];
+    NSString *cookie = [[NSUserDefaults standardUserDefaults] stringForKey:@"auth-cookie"];
+    
+    if (cookie) {
+        [rater rateCard:postCard goodRating:rating];
+    }
+    else {
+        Authorizer *authorizer = [[Authorizer alloc] init];
+        [authorizer authorizeUser];
+    }
+}
+
+- (IBAction)minusButtonPressed:(id)sender {
+    NSLog(@"superview: %@", [[[sender superview] superview] superview]);
+    UICollectionViewCell *cell = (UICollectionViewCell *) [[[[sender superview] superview] superview] superview];
+    NSIndexPath *touchedIndex = [self.collectionView indexPathForCell:cell];
+    NSLog(@"touched %i", touchedIndex.row);
+    [self ratePostCard:self.arrayOfPostCards[touchedIndex.row] goodRating:NO];
+}
+
+- (IBAction)plusButtonPressed:(id)sender {
+    NSLog(@"superview: %@", [[[sender superview] superview] superview]);
+    UICollectionViewCell *cell = (UICollectionViewCell *) [[[[sender superview] superview] superview] superview];
+    NSIndexPath *touchedIndex = [self.collectionView indexPathForCell:cell];
+    NSLog(@"touched %i", touchedIndex.row);
+    [self ratePostCard:self.arrayOfPostCards[touchedIndex.row] goodRating:YES];
+
 }
 @end

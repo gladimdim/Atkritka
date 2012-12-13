@@ -25,6 +25,7 @@
 		F22C94591668DA460067F482 /* PostCardDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F22C94581668DA460067F482 /* PostCardDetailedViewController.m */; };
 		F271110F16622A7E00087E6E /* PostCardObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F271110E16622A7E00087E6E /* PostCardObject.m */; };
 		F271111316622BE400087E6E /* ImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = F271111216622BE400087E6E /* ImageDownloader.m */; };
+		F28509B6167A1E9C00C4D923 /* PostCardRater.m in Sources */ = {isa = PBXBuildFile; fileRef = F28509B5167A1E9C00C4D923 /* PostCardRater.m */; };
 		F28A793D16610D12003D9D8F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28A793C16610D12003D9D8F /* UIKit.framework */; };
 		F28A793F16610D12003D9D8F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28A793E16610D12003D9D8F /* Foundation.framework */; };
 		F28A794116610D12003D9D8F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28A794016610D12003D9D8F /* CoreGraphics.framework */; };
@@ -40,6 +41,8 @@
 		F2E1FD49166A1A8F0073FAF2 /* Delete.png in Resources */ = {isa = PBXBuildFile; fileRef = F2E1FD48166A1A8F0073FAF2 /* Delete.png */; };
 		F2E1FD52166A3F5F0073FAF2 /* PostCardDetailedlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2E1FD50166A3F5F0073FAF2 /* PostCardDetailedlViewController.xib */; };
 		F2E1FD55166A45650073FAF2 /* StatusLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E1FD54166A45650073FAF2 /* StatusLabel.m */; };
+		F2FF7964167A2752001C46B6 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FF7963167A2752001C46B6 /* NSData+Base64.m */; };
+		F2FF7968167A30E2001C46B6 /* Authorizer.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FF7967167A30E2001C46B6 /* Authorizer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +70,8 @@
 		F271110E16622A7E00087E6E /* PostCardObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostCardObject.m; path = Classes/PostCardObject.m; sourceTree = "<group>"; };
 		F271111116622BE400087E6E /* ImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloader.h; sourceTree = "<group>"; };
 		F271111216622BE400087E6E /* ImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloader.m; sourceTree = "<group>"; };
+		F28509B4167A1E9C00C4D923 /* PostCardRater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostCardRater.h; path = Classes/PostCardRater.h; sourceTree = "<group>"; };
+		F28509B5167A1E9C00C4D923 /* PostCardRater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostCardRater.m; path = Classes/PostCardRater.m; sourceTree = "<group>"; };
 		F28A793816610D12003D9D8F /* Atkritka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atkritka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F28A793C16610D12003D9D8F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F28A793E16610D12003D9D8F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -89,6 +94,10 @@
 		F2E1FD50166A3F5F0073FAF2 /* PostCardDetailedlViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCardDetailedlViewController.xib; sourceTree = "<group>"; };
 		F2E1FD53166A45650073FAF2 /* StatusLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatusLabel.h; path = Classes/StatusLabel.h; sourceTree = "<group>"; };
 		F2E1FD54166A45650073FAF2 /* StatusLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatusLabel.m; path = Classes/StatusLabel.m; sourceTree = "<group>"; };
+		F2FF7962167A2752001C46B6 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "Classes/NSData+Base64.h"; sourceTree = "<group>"; };
+		F2FF7963167A2752001C46B6 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "Classes/NSData+Base64.m"; sourceTree = "<group>"; };
+		F2FF7966167A30E2001C46B6 /* Authorizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Authorizer.h; path = Classes/Authorizer.h; sourceTree = "<group>"; };
+		F2FF7967167A30E2001C46B6 /* Authorizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Authorizer.m; path = Classes/Authorizer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +156,8 @@
 		F271111016622A8100087E6E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F2FF7962167A2752001C46B6 /* NSData+Base64.h */,
+				F2FF7963167A2752001C46B6 /* NSData+Base64.m */,
 				F28A795F16611227003D9D8F /* PostCardDownloader.h */,
 				F28A796016611228003D9D8F /* PostCardDownloader.m */,
 				F271111116622BE400087E6E /* ImageDownloader.h */,
@@ -155,6 +166,10 @@
 				F2E1FD54166A45650073FAF2 /* StatusLabel.m */,
 				F271110D16622A7E00087E6E /* PostCardObject.h */,
 				F271110E16622A7E00087E6E /* PostCardObject.m */,
+				F28509B4167A1E9C00C4D923 /* PostCardRater.h */,
+				F28509B5167A1E9C00C4D923 /* PostCardRater.m */,
+				F2FF7966167A30E2001C46B6 /* Authorizer.h */,
+				F2FF7967167A30E2001C46B6 /* Authorizer.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -313,6 +328,9 @@
 				F22C94591668DA460067F482 /* PostCardDetailedViewController.m in Sources */,
 				F2E1FD55166A45650073FAF2 /* StatusLabel.m in Sources */,
 				F218354B1671ED38008200B3 /* PostCardsCollectionView.m in Sources */,
+				F28509B6167A1E9C00C4D923 /* PostCardRater.m in Sources */,
+				F2FF7964167A2752001C46B6 /* NSData+Base64.m in Sources */,
+				F2FF7968167A30E2001C46B6 /* Authorizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

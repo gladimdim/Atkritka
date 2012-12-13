@@ -48,6 +48,9 @@
 
 -(UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell;
+    
+    //if there are more than 1 post card it means that we are at normal view and not random card view
+    //if there is only only post card - we are at random view and must use another prototype with different layout of controls.
     if (self.arrayOfData.count > 1) {
         cell = [self dequeueReusableCellWithReuseIdentifier:@"postCardCell" forIndexPath:indexPath];
     }
@@ -101,6 +104,8 @@
     return cell;
 }
 
+//if there is only one postcard it means we are at random screen and we should increase height of cell to 400
+//if there are more postcards - we must set cell's size back to normal
 -(CGSize) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (self.arrayOfData.count == 1) {
         return CGSizeMake(320, 400);
@@ -143,9 +148,6 @@
 }
 
 -(void) scrollLastSwipedCellWithNewIndexPath:(NSIndexPath *) newIndexPathForSwiped animated:(BOOL) animated {
-    if (self.lastSwipedCollectionViewCell == newIndexPathForSwiped) {
-        return;
-    }
     
     UICollectionViewCell *cell = [self cellForItemAtIndexPath:self.lastSwipedCollectionViewCell];
     UIScrollView *scroll = (UIScrollView *) [cell viewWithTag:1];
