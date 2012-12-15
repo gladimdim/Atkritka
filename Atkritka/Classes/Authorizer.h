@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol AuthorizerCallBack <NSObject>
+-(void) userWasAuthorized:(BOOL) authorized;
+@end
+
 @interface Authorizer : NSObject <NSURLConnectionDelegate>
 -(void) authorizeUser;
+@property id <AuthorizerCallBack> callBackDelegate;
 @end

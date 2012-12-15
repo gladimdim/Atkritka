@@ -11,6 +11,7 @@
 
 @interface Authorizer ()
 @property NSMutableData *receivedData;
+@property NSString *cookie;
 @end
 @implementation Authorizer
 
@@ -19,7 +20,9 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:authURL];
     
     [request addValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    NSString *authStr = [NSString stringWithFormat:@"%@:%@", @"zopik", @"zopa1234"];
+    NSString *username = [[NSUserDefaults standardUserDefaults] valueForKey:@"username"];
+    NSString *password = [[NSUserDefaults standardUserDefaults] valueForKey:@"password"];
+    NSString *authStr = [NSString stringWithFormat:@"%@:%@", username, password];
     NSData *authData = [authStr dataUsingEncoding:NSASCIIStringEncoding];
     NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64EncodedString]];
     [request setValue:authValue forHTTPHeaderField:@"Authorization"];
@@ -43,15 +46,24 @@
     [self.receivedData setLength:0];
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
     NSDictionary *fields = [httpResponse allHeaderFields];
-    NSString *cookie = [fields valueForKey:@"Set-Cookie"];
-    if (cookie) {
-        
-        [[NSUserDefaults standardUserDefaults] setValue:cookie forKey:@"auth-cookie"];
+    self.cookie = [fields valueForKey:@"Set-Cookie"];
+    
+    if (self.cookie) {
+        [[NSUserDefaults standardUserDefaults] setValue:self.cookie forKey:@"auth-cookie"];
         [[NSUserDefaults standardUserDefaults] synchronize];
+        
     }
 }
 
 -(void) connectionDidFinishLoading:(NSURLConnection *)connection {
     NSString *string = [[NSString alloc] initWithData:self.receivedData encoding:NSWindowsCP1251StringEncoding];
+    
+    if ([string rangeOfString:@"error"].location == NSNotFound) {
+        [self.callBackDelegate userWasAuthorized:YES];
+    }
+    else {
+        [self.callBackDelegate userWasAuthorized:NO];
+    }
+    
 }
 @end

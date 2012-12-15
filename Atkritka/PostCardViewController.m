@@ -40,7 +40,6 @@
     self.collectionView.delegate = self.postCardsCollectionView;
     self.collectionView.dataSource = self.postCardsCollectionView;
     [self.postCardsCollectionView registerGestures];
-    
 }
 
 -(void) viewDidAppear:(BOOL)animated {
@@ -51,6 +50,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
 }
 
 -(void) downloadCards:(NSInteger ) pageId {
@@ -142,9 +146,6 @@
 }
 
 -(void) ratePostCard:(PostCardObject *) postCard goodRating:(BOOL) rating {
-   /* Authorizer *authorizer = [[Authorizer alloc] init];
-    [authorizer authorizeUser];
-    */
     NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
     NSArray *array = [storage cookies];
     [storage setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];
@@ -156,24 +157,55 @@
     }
     else {
         Authorizer *authorizer = [[Authorizer alloc] init];
+        authorizer.callBackDelegate = self;
         [authorizer authorizeUser];
     }
 }
 
+-(BOOL) checkUsernameAndPasswordExist {
+    NSString *username = [[NSUserDefaults standardUserDefaults] valueForKey:@"username"];
+    NSString *password = [[NSUserDefaults standardUserDefaults] valueForKey:@"password"];
+    if ([username isEqualToString:@""] || [password isEqualToString:@""]) {
+        return NO;
+    }
+    else {
+        YES;
+    }
+}
+
 - (IBAction)minusButtonPressed:(id)sender {
-    NSLog(@"superview: %@", [[[sender superview] superview] superview]);
-    UICollectionViewCell *cell = (UICollectionViewCell *) [[[[sender superview] superview] superview] superview];
-    NSIndexPath *touchedIndex = [self.collectionView indexPathForCell:cell];
-    NSLog(@"touched %i", touchedIndex.row);
-    [self ratePostCard:self.arrayOfPostCards[touchedIndex.row] goodRating:NO];
+    if ([self checkUsernameAndPasswordExist]) {
+        NSLog(@"superview: %@", [[[sender superview] superview] superview]);
+        UICollectionViewCell *cell = (UICollectionViewCell *) [[[[sender superview] superview] superview] superview];
+        NSIndexPath *touchedIndex = [self.collectionView indexPathForCell:cell];
+        NSLog(@"touched %i", touchedIndex.row);
+        [self ratePostCard:self.arrayOfPostCards[touchedIndex.row] goodRating:NO];
+    }
+    else {
+        [self performSegueWithIdentifier:@"showLoginView" sender:self];
+    }
 }
 
 - (IBAction)plusButtonPressed:(id)sender {
-    NSLog(@"superview: %@", [[[sender superview] superview] superview]);
-    UICollectionViewCell *cell = (UICollectionViewCell *) [[[[sender superview] superview] superview] superview];
-    NSIndexPath *touchedIndex = [self.collectionView indexPathForCell:cell];
-    NSLog(@"touched %i", touchedIndex.row);
-    [self ratePostCard:self.arrayOfPostCards[touchedIndex.row] goodRating:YES];
+    /*Authorizer *authorizer = [[Authorizer alloc] init];
+    [authorizer authorizeUser];
+     */
+    if ([self checkUsernameAndPasswordExist]) {
+        NSLog(@"superview: %@", [[[sender superview] superview] superview]);
+        UICollectionViewCell *cell = (UICollectionViewCell *) [[[[sender superview] superview] superview] superview];
+        NSIndexPath *touchedIndex = [self.collectionView indexPathForCell:cell];
+        NSLog(@"touched %i", touchedIndex.row);
+        [self ratePostCard:self.arrayOfPostCards[touchedIndex.row] goodRating:YES];
+    }
+    else {
+        [self performSegueWithIdentifier:@"showLoginView" sender:self];
+    }
+    
+}
 
+-(void) userWasAuthorized:(BOOL)authorized {
+    if (!authorized) {
+        [self performSegueWithIdentifier:@"showLoginView" sender:self];
+    }
 }
 @end

@@ -12,15 +12,18 @@
 @interface PostCardRater ()
 @property NSMutableData *receivedData;
 @property NSString *cookie;
+@property PostCardObject *postCard;
 @end
 
 @implementation PostCardRater
 
 -(void) rateCard:(PostCardObject *) postCard goodRating:(BOOL)rating {
+    self.postCard = postCard;
     NSString *action = rating ? @"plus" : @"minus";
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://atkritka.com/vote.php?action=%@&id=%@&js", action, postCard.uniqueId]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [request setHTTPMethod:@"POST"];
+    //[request setValue:[[NSUserDefaults standardUserDefaults] stringForKey:@"auth-cookie"] forHTTPHeaderField:@"Cookie"];
+    //[request setHTTPMethod:@"POST"];
     [request setHTTPShouldHandleCookies:YES];
     NSURLConnection *connection = [NSURLConnection connectionWithRequest:request delegate:self];
     if (connection) {
@@ -41,11 +44,14 @@
 
 -(void) connectionDidFinishLoading:(NSURLConnection *)connection {
     NSString *string = [[NSString alloc] initWithData:self.receivedData encoding:NSWindowsCP1251StringEncoding];
+    NSLog(@"response for rate: %@", string);
     NSRange range = [string rangeOfString:@"error"];
     if (range.location == NSNotFound) {
         NSLog(@"ok rate");
     }
     else {
+        Authorizer *authorizer = [[Authorizer alloc] init];
+        [authorizer authorizeUser];
         NSLog(@"not ok rate");
     }
 }

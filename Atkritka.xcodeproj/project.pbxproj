@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F208B265167D24C20057D5DF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F208B264167D24C20057D5DF /* LoginViewController.m */; };
 		F218354B1671ED38008200B3 /* PostCardsCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F218354A1671ED38008200B3 /* PostCardsCollectionView.m */; };
 		F218359516744CE0008200B3 /* custom_grouped.png in Resources */ = {isa = PBXBuildFile; fileRef = F218359416744CE0008200B3 /* custom_grouped.png */; };
 		F21835971675ACBE008200B3 /* segment_background.png in Resources */ = {isa = PBXBuildFile; fileRef = F21835961675ACBE008200B3 /* segment_background.png */; };
@@ -46,6 +47,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F208B263167D24C10057D5DF /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		F208B264167D24C20057D5DF /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		F21835491671ED38008200B3 /* PostCardsCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCardsCollectionView.h; sourceTree = "<group>"; };
 		F218354A1671ED38008200B3 /* PostCardsCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCardsCollectionView.m; sourceTree = "<group>"; };
 		F218358E16744544008200B3 /* CardsManagementProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CardsManagementProtocol.h; path = Protocols/CardsManagementProtocol.h; sourceTree = "<group>"; };
@@ -214,6 +217,8 @@
 				F218354A1671ED38008200B3 /* PostCardsCollectionView.m */,
 				F28A795716610D12003D9D8F /* PostCardViewController.h */,
 				F28A795816610D12003D9D8F /* PostCardViewController.m */,
+				F208B263167D24C10057D5DF /* LoginViewController.h */,
+				F208B264167D24C20057D5DF /* LoginViewController.m */,
 				F28A794316610D12003D9D8F /* Supporting Files */,
 				F22C94571668DA460067F482 /* PostCardDetailedViewController.h */,
 				F22C94581668DA460067F482 /* PostCardDetailedViewController.m */,
@@ -331,6 +336,7 @@
 				F28509B6167A1E9C00C4D923 /* PostCardRater.m in Sources */,
 				F2FF7964167A2752001C46B6 /* NSData+Base64.m in Sources */,
 				F2FF7968167A30E2001C46B6 /* Authorizer.m in Sources */,
+				F208B265167D24C20057D5DF /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

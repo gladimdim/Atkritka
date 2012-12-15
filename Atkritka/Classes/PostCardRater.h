@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "PostCardObject.h"
+#import "Authorizer.h"
 @interface PostCardRater : NSObject <NSURLConnectionDelegate>
 -(void) rateCard:(PostCardObject *) postCard goodRating:(BOOL) rating;
 @end
