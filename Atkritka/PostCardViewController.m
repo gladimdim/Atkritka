@@ -29,7 +29,7 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"segment_background"]];
-    self.popularCounter = 0;
+    self.popularCounter = 1; //setting this to 1 and not to 0: because for API 0=1. 
     self.arrayOfPostCards = [[NSMutableArray alloc] initWithCapacity:10];
     [self downloadCards:self.popularCounter];
     self.postCardsCollectionView = (PostCardsCollectionView *) self.collectionView;
@@ -101,7 +101,7 @@
     [self.collectionView reloadData];
 }
 
--(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+/*-(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
    // [self performSegueWithIdentifier:@"showCardDetailView" sender:self];
     PostCardDetailedViewController *pcVC = [[PostCardDetailedViewController alloc] initWithNibName:@"PostCardDetailedlViewController" bundle:[NSBundle mainBundle]];
     NSIndexPath *selectedIndex = [[self.collectionView indexPathsForSelectedItems] lastObject];
@@ -112,7 +112,7 @@
     [self presentViewController:unc animated:YES completion:^{
         NSLog(@"Opefning modal view");
     }];
-}
+}*/
 
 - (IBAction)segmentedControlChanged:(id)sender {
     //reset current downloader so not yet loaded post cards are not loaded to new view
@@ -130,7 +130,7 @@
 
 -(void) ratePostCard:(PostCardObject *) postCard goodRating:(BOOL) rating {
     NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-    NSArray *array = [storage cookies];
+    //NSArray *array = [storage cookies];
     [storage setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];
     PostCardRater *rater = [[PostCardRater alloc] init];
     rater.callBackDelegate = self;
@@ -141,8 +141,11 @@
     }
     else {
         Authorizer *authorizer = [[Authorizer alloc] init];
-        authorizer.callBackDelegate = self;
-        [authorizer authorizeUser];
+        [authorizer authorizeUser:^(BOOL authorized) {
+            if (!authorized) {
+                [self performSegueWithIdentifier:@"showLoginView" sender:self];
+            }
+        }];
     }
 }
 
@@ -182,11 +185,6 @@
     }
 }
 
--(void) userWasAuthorized:(BOOL)authorized {
-    if (!authorized) {
-        [self performSegueWithIdentifier:@"showLoginView" sender:self];
-    }
-}
 - (IBAction)btnRandomPressed:(id)sender {
     [self.arrayOfPostCards removeAllObjects];
     [self.collectionView reloadData];

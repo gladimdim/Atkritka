@@ -61,20 +61,17 @@
         [[NSUserDefaults standardUserDefaults] setValue:self.textFieldPassword.text forKey:@"password"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         Authorizer *authorizer = [[Authorizer alloc] init];
-        authorizer.callBackDelegate = self;
-        [authorizer authorizeUser];
+        [authorizer authorizeUser:^(BOOL authorized) {
+            if (authorized) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enter data" message:@"User authorized." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                [alert show];
+            }
+            else {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enter data" message:@"Wrong username or password." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                [alert show];
+            }
+        }];
     }
 }
 
--(void) userWasAuthorized:(BOOL)authorized {
-    if (authorized) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enter data" message:@"User authorized." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-        [alert show];
-
-    }
-    else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enter data" message:@"Wrong username or password." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-        [alert show];
-    }
-}
 @end

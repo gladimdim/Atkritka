@@ -12,10 +12,12 @@
 @interface Authorizer ()
 @property NSMutableData *receivedData;
 @property NSString *cookie;
+@property (strong) void (^block) (BOOL);
 @end
 @implementation Authorizer
 
--(void) authorizeUser {
+-(void) authorizeUser:(void (^)(BOOL))block {
+    self.block = block;
     NSURL *authURL = [NSURL URLWithString:@"http://atkritka.com/auth/index.php?json=Y"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:authURL];
     
@@ -59,10 +61,12 @@
     NSString *string = [[NSString alloc] initWithData:self.receivedData encoding:NSWindowsCP1251StringEncoding];
     
     if ([string rangeOfString:@"error"].location == NSNotFound) {
-        [self.callBackDelegate userWasAuthorized:YES];
+        self.block(YES);
+       // [self.callBackDelegate userWasAuthorized:YES];
     }
     else {
-        [self.callBackDelegate userWasAuthorized:NO];
+        self.block(NO);
+       // [self.callBackDelegate userWasAuthorized:NO];
     }
     
 }
