@@ -9,6 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "PostCardObject.h"
 #import "Authorizer.h"
+
+@protocol PostCardRaterCallBack <NSObject>
+
+-(void) postCard:(PostCardObject *) postCard ratedUp:(BOOL) rated;
+@end
+
 @interface PostCardRater : NSObject <NSURLConnectionDelegate>
 -(void) rateCard:(PostCardObject *) postCard goodRating:(BOOL) rating;
+@property id <PostCardRaterCallBack> callBackDelegate;
 @end

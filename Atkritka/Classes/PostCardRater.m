@@ -13,12 +13,14 @@
 @property NSMutableData *receivedData;
 @property NSString *cookie;
 @property PostCardObject *postCard;
+@property BOOL goodRating;
 @end
 
 @implementation PostCardRater
 
 -(void) rateCard:(PostCardObject *) postCard goodRating:(BOOL)rating {
     self.postCard = postCard;
+    self.goodRating = rating;
     NSString *action = rating ? @"plus" : @"minus";
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://atkritka.com/vote.php?action=%@&id=%@&js", action, postCard.uniqueId]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
@@ -48,6 +50,7 @@
     NSRange range = [string rangeOfString:@"error"];
     if (range.location == NSNotFound) {
         NSLog(@"ok rate");
+        [self.callBackDelegate postCard:self.postCard ratedUp:self.goodRating];
     }
     else {
         Authorizer *authorizer = [[Authorizer alloc] init];

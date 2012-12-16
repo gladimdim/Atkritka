@@ -13,8 +13,6 @@
 #import "PostCardDetailedViewController.h"
 #import "StatusLabel.h"
 #import "PostCardsCollectionView.h"
-#import "PostCardRater.h"
-#import "Authorizer.h"
 
 @interface PostCardViewController ()
 @property NSMutableArray *arrayOfPostCards;
@@ -116,15 +114,6 @@
     }];
 }
 
--(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"showCardDetailView"]) {
-        PostCardDetailedViewController *pcVC = (PostCardDetailedViewController *) segue.destinationViewController;
-        NSIndexPath *selectedIndex = [[self.collectionView indexPathsForSelectedItems] lastObject];
-        
-        pcVC.postCardObj = [self.arrayOfPostCards objectAtIndex:selectedIndex.row];
-    }
-}
-
 - (IBAction)segmentedControlChanged:(id)sender {
     //reset current downloader so not yet loaded post cards are not loaded to new view
     self.postCardDownloader.callBackDelegate = nil;
@@ -139,17 +128,12 @@
     [self downloadCards:0];
 }
 
--(void) closeModalPostCard {
-    [self dismissViewControllerAnimated:YES completion:^ {
-        NSLog(@"Closed modal view");
-    }];
-}
-
 -(void) ratePostCard:(PostCardObject *) postCard goodRating:(BOOL) rating {
     NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
     NSArray *array = [storage cookies];
     [storage setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];
     PostCardRater *rater = [[PostCardRater alloc] init];
+    rater.callBackDelegate = self;
     NSString *cookie = [[NSUserDefaults standardUserDefaults] stringForKey:@"auth-cookie"];
     
     if (cookie) {
@@ -165,12 +149,8 @@
 -(BOOL) checkUsernameAndPasswordExist {
     NSString *username = [[NSUserDefaults standardUserDefaults] valueForKey:@"username"];
     NSString *password = [[NSUserDefaults standardUserDefaults] valueForKey:@"password"];
-    if ([username isEqualToString:@""] || [password isEqualToString:@""]) {
-        return NO;
-    }
-    else {
-        YES;
-    }
+    return !([username isEqualToString:@""] || [password isEqualToString:@""]);
+
 }
 
 - (IBAction)minusButtonPressed:(id)sender {
@@ -200,7 +180,6 @@
     else {
         [self performSegueWithIdentifier:@"showLoginView" sender:self];
     }
-    
 }
 
 -(void) userWasAuthorized:(BOOL)authorized {
@@ -208,4 +187,25 @@
         [self performSegueWithIdentifier:@"showLoginView" sender:self];
     }
 }
+- (IBAction)btnRandomPressed:(id)sender {
+    [self.arrayOfPostCards removeAllObjects];
+    [self.collectionView reloadData];
+    [self downloadCards:0];
+}
+
+-(void) postCard:(PostCardObject *)postCard ratedUp:(BOOL)rated {
+    NSInteger rating = [postCard.rating integerValue];
+    rated ? rating++ : rating--;
+    postCard.rating = [NSString stringWithFormat:@"%i", rating];
+
+    NSInteger index = [self.arrayOfPostCards indexOfObject:postCard];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+    UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:indexPath];
+    UIScrollView *scrollView = (UIScrollView *) [cell.contentView viewWithTag:TAG_SCROLLVIEW];
+    UIView *containerView = (UIView *) [scrollView viewWithTag:TAG_VIEW_CONTAINTER];
+    UILabel *labelRating = (UILabel *) [containerView viewWithTag:TAG_RATING_LABEL];
+    labelRating.text = postCard.rating;
+    //[self.collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
+}
+
 @end

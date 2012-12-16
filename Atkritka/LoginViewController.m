@@ -46,6 +46,7 @@
     [super viewDidAppear:animated];
     self.textFieldUsername.text = [[NSUserDefaults standardUserDefaults] valueForKey:@"username"];
     self.textFieldPassword.text = [[NSUserDefaults standardUserDefaults] valueForKey:@"password"];
+    [self becomeFirstResponder];
 }
 
 - (IBAction)btnLoginPressed:(id)sender {

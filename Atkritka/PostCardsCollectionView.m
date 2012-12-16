@@ -14,16 +14,11 @@
 @interface PostCardsCollectionView ()
 @property CGPoint startSwipePoint;
 @property UIGestureRecognizer *gesture;
-@property NSIndexPath *lastSwipedCollectionViewCell;
+@property NSIndexPath *lastSwipedCollectionViewCellIndexPath;
 @property int popularCounter;
 @end
 
-#define TAG_SCROLLVIEW 1
-#define TAG_IMAGEVIEW 2
-#define TAG_AUTHOR_LABEL 5
-#define TAG_VIEW_CONTAINTER 3
-#define TAG_CREATEDAT_LABEL 6
-#define TAG_RATING_LABEL 7
+
 
 @implementation PostCardsCollectionView
 
@@ -92,8 +87,9 @@
     UILabel *labelRating = (UILabel *) [containerView viewWithTag:TAG_RATING_LABEL];
     labelRating.text = postCardObj.rating;
     
-    if (indexPath.row == self.arrayOfData.count-2) {
-         [self.callBackDelegate downloadCards:++self.popularCounter];
+    if (indexPath.row == self.arrayOfData.count - 2) {
+        self.popularCounter = self.popularCounter + 1;
+        [self.callBackDelegate downloadCards:self.popularCounter];
          //[self.collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObjects:NSIndex, nil]];
         UIViewController *con = (UIViewController *) self.callBackDelegate;
         
@@ -117,14 +113,14 @@
 }
 
 - (void) swipeGestureRecognizerHandler:(UISwipeGestureRecognizer *)sender {
-    NSLog(@"swiped to: %i", sender.direction);
+    //NSLog(@"swiped to: %i", sender.direction);
     CGPoint swipePoint = [sender locationInView:self];
     NSIndexPath *swipedAtIndexPath = [self indexPathForItemAtPoint:swipePoint];
     UICollectionViewCell *cell = [self cellForItemAtIndexPath:swipedAtIndexPath];
     UIScrollView *scrollView = (UIScrollView *) [cell viewWithTag:1];
     CGPoint scrollContentOffset = scrollView.contentOffset;
     CGPoint scrollToPoint;
-    NSLog(@"scrollview contentoffset: %@ and direction: %i", NSStringFromCGPoint(scrollContentOffset), sender.direction);
+   // NSLog(@"scrollview contentoffset: %@ and direction: %i", NSStringFromCGPoint(scrollContentOffset), sender.direction);
     int swipeOffset = 145;
     if (scrollContentOffset.x == swipeOffset && sender.direction == UISwipeGestureRecognizerDirectionRight) {
         scrollToPoint = CGPointMake(0, 0);
@@ -136,23 +132,19 @@
         [scrollView setContentOffset:scrollToPoint animated:YES];
        // [self scrollLastSwipedCellAtIndexPath:swipedAtIndexPath];
     }
-    [self scrollLastSwipedCellWithNewIndexPath:swipedAtIndexPath animated:YES];
-    NSIndexPath *cheat = [NSIndexPath indexPathForRow:3 inSection:0];
-    cell = [self cellForItemAtIndexPath:cheat];
-    scrollView = (UIScrollView *) [cell viewWithTag:1];
-    scrollContentOffset = scrollView.contentOffset;
-    NSLog(@"scroll log cheated: %@", NSStringFromCGPoint(scrollContentOffset));
+    if (swipedAtIndexPath != self.lastSwipedCollectionViewCellIndexPath) {
+        [self scrollLastSwipedCellWithNewIndexPath:swipedAtIndexPath animated:YES];
+    }
     
-    
-    NSLog(@"swiped cell %i", swipedAtIndexPath.row);
+   // NSLog(@"swiped cell %i", swipedAtIndexPath.row);
 }
 
 -(void) scrollLastSwipedCellWithNewIndexPath:(NSIndexPath *) newIndexPathForSwiped animated:(BOOL) animated {
     
-    UICollectionViewCell *cell = [self cellForItemAtIndexPath:self.lastSwipedCollectionViewCell];
+    UICollectionViewCell *cell = [self cellForItemAtIndexPath:self.lastSwipedCollectionViewCellIndexPath];
     UIScrollView *scroll = (UIScrollView *) [cell viewWithTag:1];
     [scroll setContentOffset:CGPointMake(0, 0) animated:animated];
-    self.lastSwipedCollectionViewCell = newIndexPathForSwiped;
+    self.lastSwipedCollectionViewCellIndexPath = newIndexPathForSwiped;
 }
 
 -(void) tapGestureHandler:(UITapGestureRecognizer *)sender {
