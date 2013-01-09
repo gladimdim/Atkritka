@@ -40,6 +40,7 @@
 
 -(void) viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBarHidden = NO;
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"custom_grouped"]]];
 }
 
 -(void) viewDidAppear:(BOOL)animated {

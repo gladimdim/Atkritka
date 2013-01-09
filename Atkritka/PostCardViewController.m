@@ -38,10 +38,12 @@
     self.collectionView.delegate = self.postCardsCollectionView;
     self.collectionView.dataSource = self.postCardsCollectionView;
     [self.postCardsCollectionView registerGestures];
+    [self.segmentedControl setImage:[UIImage imageNamed:@"ico-user"] forSegmentAtIndex:3];
 }
 
 -(void) viewDidAppear:(BOOL)animated {
     [StatusLabel showLabelWithStatusOfAction:NSLocalizedString(@"Updating", nil) forView:self.view position:@"center"];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,6 +55,9 @@
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
+    [self.segmentedControl setSelectedSegmentIndex:0];
+    [self segmentedControlChanged:self.segmentedControl];
+    
 }
 
 -(void) downloadCards:(NSInteger ) pageId {
@@ -64,7 +69,8 @@
         [self.postCardDownloader getCardsDelegate:self section:@"new&" forPageId:pageId];
     }
     else if (self.segmentedControl.selectedSegmentIndex == 2) {
-        [self.postCardDownloader getCardsDelegate:self section:@"all&" forPageId:pageId];
+        //[self.postCardDownloader getCardsDelegate:self section:@"all&" forPageId:pageId];
+        [self performSegueWithIdentifier:@"showLoginView" sender:self];
     }
     else if (self.segmentedControl.selectedSegmentIndex == 3) {
         [self.postCardDownloader getRandomCard:self];

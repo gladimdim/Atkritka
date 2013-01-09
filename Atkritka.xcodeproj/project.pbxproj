@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		F208B265167D24C20057D5DF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F208B264167D24C20057D5DF /* LoginViewController.m */; };
 		F218354B1671ED38008200B3 /* PostCardsCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F218354A1671ED38008200B3 /* PostCardsCollectionView.m */; };
-		F218359516744CE0008200B3 /* custom_grouped.png in Resources */ = {isa = PBXBuildFile; fileRef = F218359416744CE0008200B3 /* custom_grouped.png */; };
-		F21835971675ACBE008200B3 /* segment_background.png in Resources */ = {isa = PBXBuildFile; fileRef = F21835961675ACBE008200B3 /* segment_background.png */; };
-		F21835991675AE27008200B3 /* swipedDetailsViewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = F21835981675AE27008200B3 /* swipedDetailsViewBackground.png */; };
 		F21835A4167702F0008200B3 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = F218359A167702F0008200B3 /* iTunesArtwork.png */; };
 		F21835A5167702F0008200B3 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = F218359B167702F0008200B3 /* Icon-72.png */; };
 		F21835A6167702F0008200B3 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F218359C167702F0008200B3 /* Icon-72@2x.png */; };
@@ -39,6 +36,13 @@
 		F28A795616610D12003D9D8F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28A795416610D12003D9D8F /* MainStoryboard.storyboard */; };
 		F28A795916610D12003D9D8F /* PostCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F28A795816610D12003D9D8F /* PostCardViewController.m */; };
 		F28A796116611228003D9D8F /* PostCardDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = F28A796016611228003D9D8F /* PostCardDownloader.m */; };
+		F2A3AD6D169DF3890083675E /* custom_grouped.png in Resources */ = {isa = PBXBuildFile; fileRef = F2A3AD6A169DF3890083675E /* custom_grouped.png */; };
+		F2A3AD6E169DF3890083675E /* segment_background.png in Resources */ = {isa = PBXBuildFile; fileRef = F2A3AD6B169DF3890083675E /* segment_background.png */; };
+		F2A3AD6F169DF3890083675E /* swipedDetailsViewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = F2A3AD6C169DF3890083675E /* swipedDetailsViewBackground.png */; };
+		F2A3AD72169DF41A0083675E /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = F2A3AD70169DF41A0083675E /* green.png */; };
+		F2A3AD73169DF41A0083675E /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = F2A3AD71169DF41A0083675E /* red.png */; };
+		F2A3AD75169E08740083675E /* ico-user.png in Resources */ = {isa = PBXBuildFile; fileRef = F2A3AD74169E08740083675E /* ico-user.png */; };
+		F2A3AD77169E18050083675E /* green_button.png in Resources */ = {isa = PBXBuildFile; fileRef = F2A3AD76169E18050083675E /* green_button.png */; };
 		F2E1FD49166A1A8F0073FAF2 /* Delete.png in Resources */ = {isa = PBXBuildFile; fileRef = F2E1FD48166A1A8F0073FAF2 /* Delete.png */; };
 		F2E1FD52166A3F5F0073FAF2 /* PostCardDetailedlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2E1FD50166A3F5F0073FAF2 /* PostCardDetailedlViewController.xib */; };
 		F2E1FD55166A45650073FAF2 /* StatusLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E1FD54166A45650073FAF2 /* StatusLabel.m */; };
@@ -52,9 +56,6 @@
 		F21835491671ED38008200B3 /* PostCardsCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCardsCollectionView.h; sourceTree = "<group>"; };
 		F218354A1671ED38008200B3 /* PostCardsCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCardsCollectionView.m; sourceTree = "<group>"; };
 		F218358E16744544008200B3 /* CardsManagementProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CardsManagementProtocol.h; path = Protocols/CardsManagementProtocol.h; sourceTree = "<group>"; };
-		F218359416744CE0008200B3 /* custom_grouped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = custom_grouped.png; path = ../../../Downloads/custom_grouped.png; sourceTree = "<group>"; };
-		F21835961675ACBE008200B3 /* segment_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = segment_background.png; path = ../../../Downloads/segment_background.png; sourceTree = "<group>"; };
-		F21835981675AE27008200B3 /* swipedDetailsViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = swipedDetailsViewBackground.png; path = ../../../Downloads/swipedDetailsViewBackground.png; sourceTree = "<group>"; };
 		F218359A167702F0008200B3 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iTunesArtwork.png; path = "../../../Documents/ico/App Icon [Rounded]/iTunesArtwork.png"; sourceTree = "<group>"; };
 		F218359B167702F0008200B3 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "../../../Documents/ico/App Icon [Rounded]/Icon-72.png"; sourceTree = "<group>"; };
 		F218359C167702F0008200B3 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72@2x.png"; path = "../../../Documents/ico/App Icon [Rounded]/Icon-72@2x.png"; sourceTree = "<group>"; };
@@ -93,6 +94,13 @@
 		F28A795816610D12003D9D8F /* PostCardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCardViewController.m; sourceTree = "<group>"; };
 		F28A795F16611227003D9D8F /* PostCardDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCardDownloader.h; sourceTree = "<group>"; };
 		F28A796016611228003D9D8F /* PostCardDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCardDownloader.m; sourceTree = "<group>"; };
+		F2A3AD6A169DF3890083675E /* custom_grouped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = custom_grouped.png; path = Resources/custom_grouped.png; sourceTree = "<group>"; };
+		F2A3AD6B169DF3890083675E /* segment_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = segment_background.png; path = Resources/segment_background.png; sourceTree = "<group>"; };
+		F2A3AD6C169DF3890083675E /* swipedDetailsViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = swipedDetailsViewBackground.png; path = Resources/swipedDetailsViewBackground.png; sourceTree = "<group>"; };
+		F2A3AD70169DF41A0083675E /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = green.png; path = Resources/green.png; sourceTree = "<group>"; };
+		F2A3AD71169DF41A0083675E /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red.png; path = Resources/red.png; sourceTree = "<group>"; };
+		F2A3AD74169E08740083675E /* ico-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ico-user.png"; path = "Resources/ico-user.png"; sourceTree = "<group>"; };
+		F2A3AD76169E18050083675E /* green_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = green_button.png; path = Resources/green_button.png; sourceTree = "<group>"; };
 		F2E1FD48166A1A8F0073FAF2 /* Delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Delete.png; sourceTree = "<group>"; };
 		F2E1FD50166A3F5F0073FAF2 /* PostCardDetailedlViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCardDetailedlViewController.xib; sourceTree = "<group>"; };
 		F2E1FD53166A45650073FAF2 /* StatusLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatusLabel.h; path = Classes/StatusLabel.h; sourceTree = "<group>"; };
@@ -137,9 +145,13 @@
 		F22C9453166642380067F482 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F21835981675AE27008200B3 /* swipedDetailsViewBackground.png */,
-				F21835961675ACBE008200B3 /* segment_background.png */,
-				F218359416744CE0008200B3 /* custom_grouped.png */,
+				F2A3AD76169E18050083675E /* green_button.png */,
+				F2A3AD74169E08740083675E /* ico-user.png */,
+				F2A3AD70169DF41A0083675E /* green.png */,
+				F2A3AD71169DF41A0083675E /* red.png */,
+				F2A3AD6A169DF3890083675E /* custom_grouped.png */,
+				F2A3AD6B169DF3890083675E /* segment_background.png */,
+				F2A3AD6C169DF3890083675E /* swipedDetailsViewBackground.png */,
 				F218352F1671BAE8008200B3 /* Icons */,
 				F2E1FD48166A1A8F0073FAF2 /* Delete.png */,
 				F22C9455166642510067F482 /* logo.png */,
@@ -301,9 +313,6 @@
 				F22C9456166642510067F482 /* logo.png in Resources */,
 				F2E1FD49166A1A8F0073FAF2 /* Delete.png in Resources */,
 				F2E1FD52166A3F5F0073FAF2 /* PostCardDetailedlViewController.xib in Resources */,
-				F218359516744CE0008200B3 /* custom_grouped.png in Resources */,
-				F21835971675ACBE008200B3 /* segment_background.png in Resources */,
-				F21835991675AE27008200B3 /* swipedDetailsViewBackground.png in Resources */,
 				F21835A4167702F0008200B3 /* iTunesArtwork.png in Resources */,
 				F21835A5167702F0008200B3 /* Icon-72.png in Resources */,
 				F21835A6167702F0008200B3 /* Icon-72@2x.png in Resources */,
@@ -314,6 +323,13 @@
 				F21835AB167702F0008200B3 /* Icon.png in Resources */,
 				F21835AC167702F0008200B3 /* Icon@2x.png in Resources */,
 				F21835AD167702F0008200B3 /* iTunesArtwork@2x.png in Resources */,
+				F2A3AD6D169DF3890083675E /* custom_grouped.png in Resources */,
+				F2A3AD6E169DF3890083675E /* segment_background.png in Resources */,
+				F2A3AD6F169DF3890083675E /* swipedDetailsViewBackground.png in Resources */,
+				F2A3AD72169DF41A0083675E /* green.png in Resources */,
+				F2A3AD73169DF41A0083675E /* red.png in Resources */,
+				F2A3AD75169E08740083675E /* ico-user.png in Resources */,
+				F2A3AD77169E18050083675E /* green_button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

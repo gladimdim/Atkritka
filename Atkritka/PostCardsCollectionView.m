@@ -77,7 +77,7 @@
     //setting its background color and rounded corners
     UIView *containerView = (UIView *) [scrollView viewWithTag:TAG_VIEW_CONTAINTER];
 //    containerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"custom_grouped"]];
-    containerView.layer.cornerRadius = 5;
+    //containerView.layer.cornerRadius = 5;
     UILabel *labelAuthor = (UILabel*) [containerView viewWithTag:TAG_AUTHOR_LABEL];
     labelAuthor.text = postCardObj.author;
     
@@ -121,7 +121,7 @@
     CGPoint scrollContentOffset = scrollView.contentOffset;
     CGPoint scrollToPoint;
    // NSLog(@"scrollview contentoffset: %@ and direction: %i", NSStringFromCGPoint(scrollContentOffset), sender.direction);
-    int swipeOffset = 145;
+    int swipeOffset = 150;
     if (scrollContentOffset.x == swipeOffset && sender.direction == UISwipeGestureRecognizerDirectionRight) {
         scrollToPoint = CGPointMake(0, 0);
         [scrollView setContentOffset:scrollToPoint animated:YES];
