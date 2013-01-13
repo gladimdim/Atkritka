@@ -122,7 +122,7 @@
     CGPoint scrollContentOffset = scrollView.contentOffset;
     CGPoint scrollToPoint;
    // NSLog(@"scrollview contentoffset: %@ and direction: %i", NSStringFromCGPoint(scrollContentOffset), sender.direction);
-    int swipeOffset = 150;
+    int swipeOffset = 132;
     if (scrollContentOffset.x == swipeOffset && sender.direction == UISwipeGestureRecognizerDirectionRight) {
         scrollToPoint = CGPointMake(0, 0);
         [scrollView setContentOffset:scrollToPoint animated:YES];
