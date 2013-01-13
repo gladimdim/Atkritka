@@ -41,6 +41,7 @@
 -(void) viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBarHidden = NO;
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"custom_grouped"]]];
+    [self.textFieldUsername becomeFirstResponder];
 }
 
 -(void) viewDidAppear:(BOOL)animated {

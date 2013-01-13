@@ -16,4 +16,5 @@
 @interface PostCardViewController : UIViewController <DownloadCallBack, CardsManagementProtocol, PostCardRaterCallBack >
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 - (IBAction)segmentedControlChanged:(id)sender;
+@property NSInteger lastDownloadedPage;
 @end

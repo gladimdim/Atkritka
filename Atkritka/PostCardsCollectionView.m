@@ -89,6 +89,7 @@
     
     if (indexPath.row == self.arrayOfData.count - 2) {
         self.popularCounter = self.popularCounter + 1;
+        [self.callBackDelegate increasepageCounter];
         [self.callBackDelegate downloadCards:self.popularCounter];
          //[self.collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObjects:NSIndex, nil]];
         UIViewController *con = (UIViewController *) self.callBackDelegate;

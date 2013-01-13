@@ -61,8 +61,8 @@
     NSString *string = [[NSString alloc] initWithData:self.receivedData encoding:NSWindowsCP1251StringEncoding];
     
     if ([string rangeOfString:@"error"].location == NSNotFound) {
-        self.block(YES);
-       // [self.callBackDelegate userWasAuthorized:YES];
+        if (self.block)
+            self.block(YES);
     }
     else {
         self.block(NO);

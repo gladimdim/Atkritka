@@ -21,6 +21,7 @@
 @property CGPoint startSwipePoint;
 @property PostCardsCollectionView *postCardsCollectionView;
 @property PostCardDownloader *postCardDownloader;
+@property NSInteger selectSegmentControlIndex;
 @end
 
 @implementation PostCardViewController
@@ -42,8 +43,7 @@
 }
 
 -(void) viewDidAppear:(BOOL)animated {
-    [StatusLabel showLabelWithStatusOfAction:NSLocalizedString(@"Updating", nil) forView:self.view position:@"center"];
-    
+    [super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,25 +55,35 @@
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
-    [self.segmentedControl setSelectedSegmentIndex:0];
-    [self segmentedControlChanged:self.segmentedControl];
+    self.selectSegmentControlIndex ? [self.segmentedControl setSelectedSegmentIndex:self.selectSegmentControlIndex] : [self.segmentedControl setSelectedSegmentIndex:0];
+//    [self.segmentedControl setSelectedSegmentIndex:self.selectSegmentControlIndex];
+    if (self.arrayOfPostCards.count == 0) {
+        [self.segmentedControl setSelectedSegmentIndex:self.selectSegmentControlIndex];
+          [self segmentedControlChanged:self.segmentedControl];
+    }
     
 }
 
 -(void) downloadCards:(NSInteger ) pageId {
     self.postCardDownloader = [[PostCardDownloader alloc] init];
     if (self.segmentedControl.selectedSegmentIndex == 0 ) {
-        [self.postCardDownloader getCardsDelegate:self section:@"" forPageId:pageId];
+        self.selectSegmentControlIndex = self.segmentedControl.selectedSegmentIndex;
+        [StatusLabel showLabelWithStatusOfAction:NSLocalizedString(@"Updating", nil) forView:self.view position:@"center"];
+        [self.postCardDownloader getCardsDelegate:self section:@"" forPageId:self.popularCounter];
     }
     else if (self.segmentedControl.selectedSegmentIndex == 1) {
-        [self.postCardDownloader getCardsDelegate:self section:@"new&" forPageId:pageId];
+        self.selectSegmentControlIndex = self.segmentedControl.selectedSegmentIndex;
+        [StatusLabel showLabelWithStatusOfAction:NSLocalizedString(@"Updating", nil) forView:self.view position:@"center"];
+        [self.postCardDownloader getCardsDelegate:self section:@"new&" forPageId:self.popularCounter];
     }
     else if (self.segmentedControl.selectedSegmentIndex == 2) {
+        self.selectSegmentControlIndex = self.segmentedControl.selectedSegmentIndex;
+        [StatusLabel showLabelWithStatusOfAction:NSLocalizedString(@"Updating", nil) forView:self.view position:@"center"];
         //[self.postCardDownloader getCardsDelegate:self section:@"all&" forPageId:pageId];
-        [self performSegueWithIdentifier:@"showLoginView" sender:self];
+        [self.postCardDownloader getRandomCard:self];
     }
     else if (self.segmentedControl.selectedSegmentIndex == 3) {
-        [self.postCardDownloader getRandomCard:self];
+        [self performSegueWithIdentifier:@"showLoginView" sender:self];
     }
 }
 
@@ -84,6 +94,10 @@
         downloader.callBackDelegate = self;
         [downloader downloadImageForPostCardObject:self.arrayOfPostCards[i]];
     }
+}
+
+-(void) increasepageCounter {
+    self.popularCounter = self.popularCounter + 1;
 }
 
 -(void) addDummyPostCardsAndUpdateTableView {
@@ -121,17 +135,30 @@
 }*/
 
 - (IBAction)segmentedControlChanged:(id)sender {
-    //reset current downloader so not yet loaded post cards are not loaded to new view
-    self.postCardDownloader.callBackDelegate = nil;
-    self.postCardDownloader = nil;
-    self.postCardDownloader = [[PostCardDownloader alloc] init];
-    [StatusLabel showLabelWithStatusOfAction:@"Updating" forView:self.view position:@"center"];
-    if (self.arrayOfPostCards.count > 0) {
-        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionBottom animated:NO];
+    //check that we did not select last segment to show login view.
+    //we shall remove all objects if switching between different sources for postcards
+    //but we shoudl remain all postcards if showing login view because in such case when we press back button
+    //data will be restored by iOS back to view.
+    UISegmentedControl *control = (UISegmentedControl *) sender;
+    NSInteger selected = control.selectedSegmentIndex;
+    if (selected == 3) {
+        [self performSegueWithIdentifier:@"showLoginView" sender:self];
+        return;
     }
-    [self.arrayOfPostCards removeAllObjects];
-    [self.collectionView reloadData];
-    [self downloadCards:0];
+    else {
+        self.popularCounter = 1;
+        [self.arrayOfPostCards removeAllObjects];
+        [self.collectionView reloadData];
+        //reset current downloader so not yet loaded post cards are not loaded to new view
+        self.postCardDownloader.callBackDelegate = nil;
+        self.postCardDownloader = nil;
+        self.postCardDownloader = [[PostCardDownloader alloc] init];
+        [StatusLabel showLabelWithStatusOfAction:@"Updating" forView:self.view position:@"center"];
+        /*  if (self.arrayOfPostCards.count > 0) {
+         [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionBottom animated:NO];
+         }*/
+        [self downloadCards:0];
+    }
 }
 
 -(void) ratePostCard:(PostCardObject *) postCard goodRating:(BOOL) rating {

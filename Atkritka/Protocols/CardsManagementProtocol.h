@@ -11,4 +11,5 @@
 @protocol CardsManagementProtocol <NSObject>
 -(void) addDummyPostCardsAndUpdateTableView;
 -(void) downloadCards:(NSInteger ) pageId;
+-(void) increasepageCounter;
 @end
