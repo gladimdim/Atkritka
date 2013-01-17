@@ -54,6 +54,7 @@
     }
     else {
         Authorizer *authorizer = [[Authorizer alloc] init];
+        authorizer.reauthorize = YES;
         [authorizer authorizeUser:^(BOOL authorized) {
             NSLog(@"authorized user from PostCardRater:%@", authorized ? @"YES" : @"NO");
         }];

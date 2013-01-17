@@ -10,5 +10,5 @@
 
 @interface Authorizer : NSObject <NSURLConnectionDelegate>
 -(void) authorizeUser:(void(^)(BOOL authorized)) block;
-
+@property BOOL reauthorize;
 @end

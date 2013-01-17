@@ -9,8 +9,8 @@
 #import "LoginViewController.h"
 #import "StatusLabel.h"
 @interface LoginViewController ()
-@property (strong, nonatomic) IBOutlet UITextField *textFieldUsername;
-@property (strong, nonatomic) IBOutlet UITextField *textFieldPassword;
+@property (strong, nonatomic) UITextField *textFieldUsername;
+@property (strong, nonatomic) UITextField *textFieldPassword;
 - (IBAction)btnLoginPressed:(id)sender;
 
 @end
@@ -75,5 +75,32 @@
         }];
     }
 }
+
+-(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 2;
+}
+
+-(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+-(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellTextField"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cellTextField"];
+    }
+    UITextField *textField = (UITextField *) [cell viewWithTag:1];
+    textField.placeholder = indexPath.row == 0 ? @"Логин" : @"Пароль";
+    if (indexPath.row == 0) {
+        self.textFieldUsername = textField;
+        [self.textFieldUsername becomeFirstResponder];
+    }
+    else {
+        self.textFieldPassword = textField;
+        self.textFieldPassword.secureTextEntry = YES;
+    }
+    return cell;
+}
+
 
 @end

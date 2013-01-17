@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "Authorizer.h"
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController <UITableViewDataSource>
 
 @end

@@ -29,6 +29,7 @@
     NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64EncodedString]];
     [request setValue:authValue forHTTPHeaderField:@"Authorization"];
     [request setHTTPMethod:@"POST"];
+    [request setHTTPShouldHandleCookies:self.reauthorize];
     NSURLConnection *connection = [NSURLConnection connectionWithRequest:request delegate:self];
     if (connection) {
         self.receivedData = [[NSMutableData alloc] init];
