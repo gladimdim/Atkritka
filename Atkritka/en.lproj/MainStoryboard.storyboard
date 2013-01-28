@@ -219,23 +219,22 @@
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" image="iTunesArtwork.png" translatesAutoresizingMaskIntoConstraints="NO" id="LAe-1l-FvA">
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="301" id="RGd-y6-apO"/>
-                                                                        <constraint firstAttribute="height" constant="171" id="pi9-5u-Wvi"/>
+                                                                        <constraint firstAttribute="height" constant="171" id="J3t-AS-VOK"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="custom_grouped.png" translatesAutoresizingMaskIntoConstraints="NO" id="o8g-R1-5kX">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="random-info-bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="o8g-R1-5kX">
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="55" id="gME-dt-O7p"/>
-                                                                        <constraint firstAttribute="width" constant="301" id="pFp-NS-GEP"/>
+                                                                        <constraint firstAttribute="width" constant="301" id="i5L-BM-RQe"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Автор:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiC-8H-32t">
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="21" id="T8g-Bd-Lb2"/>
+                                                                        <constraint firstAttribute="height" constant="21" id="Cjy-4v-Qg4"/>
                                                                         <constraint firstAttribute="width" constant="88" id="f7D-Xy-0Pp"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                                                    <color key="textColor" red="0.29019609089999998" green="0.33333334329999997" blue="0.43137258290000002" alpha="1" colorSpace="deviceRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                     <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <size key="shadowOffset" width="0.0" height="1"/>
@@ -245,19 +244,19 @@
                                                                         <constraint firstAttribute="width" constant="95" id="RHN-0G-upP"/>
                                                                         <constraint firstAttribute="height" constant="19" id="iR0-oT-QgO"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                    <color key="textColor" red="0.29019609089999998" green="0.33333334329999997" blue="0.43137258290000002" alpha="1" colorSpace="deviceRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                     <color key="shadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <size key="shadowOffset" width="0.0" height="1"/>
                                                                 </label>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Дата:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iiU-Mj-TWo">
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="21" id="4Dm-BR-GZ6"/>
+                                                                        <constraint firstAttribute="height" constant="21" id="WB4-ti-dY7"/>
                                                                         <constraint firstAttribute="width" constant="54" id="dcF-3o-g9o"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.29019609089999998" green="0.33333334329999997" blue="0.43137258290000002" alpha="1" colorSpace="deviceRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                     <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <size key="shadowOffset" width="0.0" height="1"/>
@@ -267,7 +266,7 @@
                                                                         <constraint firstAttribute="width" constant="104" id="Hee-Sj-XrU"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.29019609089999998" green="0.33333334329999997" blue="0.43137258290000002" alpha="1" colorSpace="deviceRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                     <color key="shadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <size key="shadowOffset" width="0.0" height="1"/>
@@ -277,8 +276,8 @@
                                                                         <constraint firstAttribute="width" constant="64" id="DDx-oN-PDJ"/>
                                                                         <constraint firstAttribute="height" constant="23" id="wTF-Ny-rKE"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                    <color key="textColor" red="0.29019609089999998" green="0.33333334329999997" blue="0.43137258290000002" alpha="1" colorSpace="deviceRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                     <color key="shadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <size key="shadowOffset" width="0.0" height="1"/>
@@ -326,19 +325,12 @@
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iFR-Vu-fed">
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="84" id="L1D-CK-rRY"/>
+                                                                        <constraint firstAttribute="width" constant="292" id="3du-Z1-wM1"/>
+                                                                        <constraint firstAttribute="height" constant="43" id="cWK-5Y-vWF"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <state key="normal">
-                                                                        <attributedString key="attributedTitle">
-                                                                            <fragment content="Крутануть">
-                                                                                <attributes>
-                                                                                    <color key="NSColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                    <font key="NSFont" size="15" name="Helvetica-Bold"/>
-                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                                </attributes>
-                                                                            </fragment>
-                                                                        </attributedString>
+                                                                    <state key="normal" image="random-button.png">
+                                                                        <attributedString key="attributedTitle"/>
                                                                     </state>
                                                                     <connections>
                                                                         <action selector="btnRandomPressed:" destination="2" eventType="touchUpInside" id="hVI-fM-XKV"/>
@@ -347,30 +339,31 @@
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                             <constraints>
-                                                                <constraint firstItem="tiC-8H-32t" firstAttribute="leading" secondItem="Mcg-Py-LQo" secondAttribute="leading" constant="19" id="6lj-vH-s8E"/>
-                                                                <constraint firstAttribute="bottom" secondItem="tiC-8H-32t" secondAttribute="bottom" constant="117" id="CJN-lM-TVz"/>
-                                                                <constraint firstItem="o8g-R1-5kX" firstAttribute="leading" secondItem="Mcg-Py-LQo" secondAttribute="leading" constant="4" id="Jav-2M-L9H"/>
-                                                                <constraint firstItem="csy-qZ-EtD" firstAttribute="centerX" secondItem="1fe-jI-UTl" secondAttribute="centerX" type="default" id="Jo3-BR-OPI"/>
-                                                                <constraint firstAttribute="bottom" secondItem="iFR-Vu-fed" secondAttribute="bottom" constant="37" id="Jw4-7e-ZUU"/>
-                                                                <constraint firstAttribute="trailing" secondItem="NSm-tc-CsH" secondAttribute="trailing" constant="15" id="OJk-5d-ebX"/>
-                                                                <constraint firstAttribute="bottom" secondItem="iiU-Mj-TWo" secondAttribute="bottom" constant="97" id="Obx-FJ-NFj"/>
-                                                                <constraint firstItem="cYa-Qq-jUR" firstAttribute="leading" secondItem="Mcg-Py-LQo" secondAttribute="leading" constant="177" scoringType="5" id="PVM-iY-glK"/>
-                                                                <constraint firstItem="LAe-1l-FvA" firstAttribute="top" secondItem="Mcg-Py-LQo" secondAttribute="top" constant="80" id="W1h-94-EOL"/>
-                                                                <constraint firstItem="iiU-Mj-TWo" firstAttribute="leading" secondItem="tiC-8H-32t" secondAttribute="leading" type="default" id="YeO-aa-UpK"/>
-                                                                <constraint firstItem="1fe-jI-UTl" firstAttribute="leading" secondItem="Mcg-Py-LQo" secondAttribute="leading" constant="62" id="bwi-hu-Cvw"/>
+                                                                <constraint firstItem="WRG-U0-cBS" firstAttribute="centerY" secondItem="NSm-tc-CsH" secondAttribute="centerY" type="default" id="0Gg-63-xRs"/>
+                                                                <constraint firstItem="o8g-R1-5kX" firstAttribute="top" secondItem="Mcg-Py-LQo" secondAttribute="top" constant="63" id="29J-vr-v20"/>
+                                                                <constraint firstItem="LAe-1l-FvA" firstAttribute="centerX" secondItem="Mcg-Py-LQo" secondAttribute="centerX" type="default" id="3nh-mC-DwI"/>
+                                                                <constraint firstItem="LAe-1l-FvA" firstAttribute="leading" secondItem="o8g-R1-5kX" secondAttribute="leading" type="default" id="4k9-Eu-Z9v"/>
+                                                                <constraint firstAttribute="bottom" secondItem="iFR-Vu-fed" secondAttribute="bottom" constant="55" id="8jZ-el-9ch"/>
+                                                                <constraint firstAttribute="trailing" secondItem="WRG-U0-cBS" secondAttribute="trailing" constant="40" id="8k3-AQ-qdX"/>
+                                                                <constraint firstAttribute="trailing" secondItem="cYa-Qq-jUR" secondAttribute="trailing" constant="102" id="LDh-Za-Fge"/>
+                                                                <constraint firstItem="tiC-8H-32t" firstAttribute="centerY" secondItem="csy-qZ-EtD" secondAttribute="centerY" type="default" id="O0D-s1-HaM"/>
+                                                                <constraint firstItem="iiU-Mj-TWo" firstAttribute="top" secondItem="Mcg-Py-LQo" secondAttribute="top" constant="88" id="PON-3K-RJM"/>
+                                                                <constraint firstAttribute="width" constant="310" id="TwJ-wy-g2i"/>
+                                                                <constraint firstItem="1fe-jI-UTl" firstAttribute="leading" secondItem="Mcg-Py-LQo" secondAttribute="leading" constant="62" id="aPh-a1-ptG"/>
+                                                                <constraint firstItem="tiC-8H-32t" firstAttribute="leading" secondItem="Mcg-Py-LQo" secondAttribute="leading" constant="18" id="bHr-H5-HTw"/>
+                                                                <constraint firstItem="o8g-R1-5kX" firstAttribute="centerY" secondItem="NSm-tc-CsH" secondAttribute="centerY" type="default" id="baJ-LA-fgo"/>
+                                                                <constraint firstAttribute="height" constant="400" id="cVL-12-OIQ"/>
                                                                 <constraint firstItem="iiU-Mj-TWo" firstAttribute="baseline" secondItem="1fe-jI-UTl" secondAttribute="baseline" type="default" id="do9-hr-cgY"/>
+                                                                <constraint firstItem="LAe-1l-FvA" firstAttribute="top" secondItem="Mcg-Py-LQo" secondAttribute="top" constant="125" id="fFE-0G-s0p"/>
                                                                 <constraint firstItem="cYa-Qq-jUR" firstAttribute="bottom" secondItem="NSm-tc-CsH" secondAttribute="bottom" type="default" id="fgB-O0-mdh"/>
+                                                                <constraint firstItem="csy-qZ-EtD" firstAttribute="leading" secondItem="Mcg-Py-LQo" secondAttribute="leading" constant="70" id="fxx-wL-kQy"/>
                                                                 <constraint firstItem="cYa-Qq-jUR" firstAttribute="top" secondItem="NSm-tc-CsH" secondAttribute="top" type="default" id="gHP-ud-6jU"/>
-                                                                <constraint firstAttribute="height" constant="400" id="gS7-OV-XeZ"/>
-                                                                <constraint firstItem="iFR-Vu-fed" firstAttribute="leading" secondItem="Mcg-Py-LQo" secondAttribute="leading" constant="107" id="h99-ao-yOo"/>
-                                                                <constraint firstItem="tiC-8H-32t" firstAttribute="centerY" secondItem="csy-qZ-EtD" secondAttribute="centerY" type="default" id="kqI-yi-V4J"/>
-                                                                <constraint firstAttribute="bottom" secondItem="o8g-R1-5kX" secondAttribute="bottom" constant="89" id="kzm-qs-TaT"/>
-                                                                <constraint firstAttribute="trailing" secondItem="cYa-Qq-jUR" secondAttribute="trailing" constant="103" id="t8M-oI-oJA"/>
-                                                                <constraint firstItem="LAe-1l-FvA" firstAttribute="leading" secondItem="Mcg-Py-LQo" secondAttribute="leading" constant="6" id="uM6-sb-dfH"/>
-                                                                <constraint firstAttribute="bottom" secondItem="cYa-Qq-jUR" secondAttribute="bottom" constant="100" id="urs-UA-QqK"/>
+                                                                <constraint firstItem="iFR-Vu-fed" firstAttribute="leading" secondItem="Mcg-Py-LQo" secondAttribute="leading" constant="10" id="ikR-tK-KUx"/>
+                                                                <constraint firstItem="tiC-8H-32t" firstAttribute="top" secondItem="Mcg-Py-LQo" secondAttribute="top" constant="68" id="pr3-Sc-jNM"/>
+                                                                <constraint firstItem="iiU-Mj-TWo" firstAttribute="leading" secondItem="tiC-8H-32t" secondAttribute="leading" type="default" id="tAo-2P-8qU"/>
+                                                                <constraint firstItem="LAe-1l-FvA" firstAttribute="trailing" secondItem="o8g-R1-5kX" secondAttribute="trailing" type="default" id="w7D-Sn-fdK"/>
+                                                                <constraint firstAttribute="trailing" secondItem="NSm-tc-CsH" secondAttribute="trailing" constant="14" id="wS2-HU-Wod"/>
                                                                 <constraint firstItem="iiU-Mj-TWo" firstAttribute="top" secondItem="1fe-jI-UTl" secondAttribute="top" type="default" id="y4d-pn-gKF"/>
-                                                                <constraint firstAttribute="bottom" secondItem="WRG-U0-cBS" secondAttribute="bottom" constant="106" id="yaV-db-2Nf"/>
-                                                                <constraint firstAttribute="trailing" secondItem="WRG-U0-cBS" secondAttribute="trailing" constant="41" id="zo7-lA-9KP"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
@@ -520,6 +513,8 @@
         <image name="green.png" width="61" height="62"/>
         <image name="green_button.png" width="586" height="89"/>
         <image name="iTunesArtwork.png" width="512" height="512"/>
+        <image name="random-button.png" width="586" height="89"/>
+        <image name="random-info-bg.png" width="604" height="105"/>
         <image name="red.png" width="61" height="62"/>
         <image name="swipedDetailsViewBackground.png" width="266" height="338"/>
     </resources>
@@ -536,9 +531,6 @@
         <class className="PostCardViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PostCardViewController.h"/>
             <relationships>
-                <relationship kind="action" name="btnRandomPressed:"/>
-                <relationship kind="action" name="minusButtonPressed:"/>
-                <relationship kind="action" name="plusButtonPressed:"/>
                 <relationship kind="action" name="segmentedControlChanged:"/>
                 <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
                 <relationship kind="outlet" name="segmentedControl" candidateClass="UISegmentedControl"/>
@@ -555,9 +547,6 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -59,12 +59,12 @@
         return;
     }
     else {
-        [[NSUserDefaults standardUserDefaults] setValue:self.textFieldUsername.text forKey:@"username"];
-        [[NSUserDefaults standardUserDefaults] setValue:self.textFieldPassword.text forKey:@"password"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
         Authorizer *authorizer = [[Authorizer alloc] init];
-        [authorizer authorizeUser:^(BOOL authorized) {
+        [authorizer authorizeUser:self.textFieldUsername.text password:self.textFieldPassword.text blockCallBack:^(BOOL authorized) {
             if (authorized) {
+                [[NSUserDefaults standardUserDefaults] setValue:self.textFieldUsername.text forKey:@"username"];
+                [[NSUserDefaults standardUserDefaults] setValue:self.textFieldPassword.text forKey:@"password"];
+                [[NSUserDefaults standardUserDefaults] synchronize];
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enter data" message:@"User authorized." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
                 [alert show];
             }

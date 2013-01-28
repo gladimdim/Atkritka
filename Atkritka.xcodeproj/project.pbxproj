@@ -21,6 +21,9 @@
 		F21835AD167702F0008200B3 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F21835A3167702F0008200B3 /* iTunesArtwork@2x.png */; };
 		F22C9456166642510067F482 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F22C9455166642510067F482 /* logo.png */; };
 		F22C94591668DA460067F482 /* PostCardDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F22C94581668DA460067F482 /* PostCardDetailedViewController.m */; };
+		F26B510E16B1CBC0006E83B7 /* random-button.png in Resources */ = {isa = PBXBuildFile; fileRef = F26B510D16B1CBC0006E83B7 /* random-button.png */; };
+		F26B511216B1CC02006E83B7 /* random-info-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = F26B511016B1CC02006E83B7 /* random-info-bg.png */; };
+		F26B511316B1CC02006E83B7 /* user-ico_1.png in Resources */ = {isa = PBXBuildFile; fileRef = F26B511116B1CC02006E83B7 /* user-ico_1.png */; };
 		F271110F16622A7E00087E6E /* PostCardObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F271110E16622A7E00087E6E /* PostCardObject.m */; };
 		F271111316622BE400087E6E /* ImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = F271111216622BE400087E6E /* ImageDownloader.m */; };
 		F28509B6167A1E9C00C4D923 /* PostCardRater.m in Sources */ = {isa = PBXBuildFile; fileRef = F28509B5167A1E9C00C4D923 /* PostCardRater.m */; };
@@ -69,6 +72,9 @@
 		F22C9455166642510067F482 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Resources/logo.png; sourceTree = "<group>"; };
 		F22C94571668DA460067F482 /* PostCardDetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCardDetailedViewController.h; sourceTree = "<group>"; };
 		F22C94581668DA460067F482 /* PostCardDetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCardDetailedViewController.m; sourceTree = "<group>"; };
+		F26B510D16B1CBC0006E83B7 /* random-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "random-button.png"; path = "Resources/random-button.png"; sourceTree = "<group>"; };
+		F26B511016B1CC02006E83B7 /* random-info-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "random-info-bg.png"; path = "Resources/random-info-bg.png"; sourceTree = "<group>"; };
+		F26B511116B1CC02006E83B7 /* user-ico_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "user-ico_1.png"; path = "Resources/user-ico_1.png"; sourceTree = "<group>"; };
 		F271110C16622A5100087E6E /* DownloadCallBack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DownloadCallBack.h; path = Protocols/DownloadCallBack.h; sourceTree = "<group>"; };
 		F271110D16622A7E00087E6E /* PostCardObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostCardObject.h; path = Classes/PostCardObject.h; sourceTree = "<group>"; };
 		F271110E16622A7E00087E6E /* PostCardObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostCardObject.m; path = Classes/PostCardObject.m; sourceTree = "<group>"; };
@@ -145,6 +151,9 @@
 		F22C9453166642380067F482 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F26B511016B1CC02006E83B7 /* random-info-bg.png */,
+				F26B511116B1CC02006E83B7 /* user-ico_1.png */,
+				F26B510D16B1CBC0006E83B7 /* random-button.png */,
 				F2DC9D1816A09895007B8E60 /* green_button.png */,
 				F2DC9D1616A09836007B8E60 /* green.png */,
 				F2A3AD74169E08740083675E /* ico-user.png */,
@@ -330,6 +339,9 @@
 				F2A3AD75169E08740083675E /* ico-user.png in Resources */,
 				F2DC9D1716A09836007B8E60 /* green.png in Resources */,
 				F2DC9D1916A09895007B8E60 /* green_button.png in Resources */,
+				F26B510E16B1CBC0006E83B7 /* random-button.png in Resources */,
+				F26B511216B1CC02006E83B7 /* random-info-bg.png in Resources */,
+				F26B511316B1CC02006E83B7 /* user-ico_1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

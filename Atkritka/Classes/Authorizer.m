@@ -16,7 +16,31 @@
 @end
 @implementation Authorizer
 
--(void) authorizeUser:(void (^)(BOOL))block {
+
+-(void) authorizeUser:(NSString *) username password:(NSString *) password blockCallBack:(void(^)(BOOL authorized)) block {
+    self.block = block;
+    NSURL *authURL = [NSURL URLWithString:@"http://atkritka.com/auth/index.php?json=Y"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:authURL];
+    
+    [request addValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    NSString *usernameLocal = (username == nil) ? [[NSUserDefaults standardUserDefaults] valueForKey:@"username"] : username;
+    NSString *passwordLocal = (password == nil) ? [[NSUserDefaults standardUserDefaults] valueForKey:@"password"] : password;
+    NSString *authStr = [NSString stringWithFormat:@"%@:%@", usernameLocal, passwordLocal];
+    NSData *authData = [authStr dataUsingEncoding:NSASCIIStringEncoding];
+    NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64EncodedString]];
+    [request setValue:authValue forHTTPHeaderField:@"Authorization"];
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPShouldHandleCookies:self.reauthorize];
+    NSURLConnection *connection = [NSURLConnection connectionWithRequest:request delegate:self];
+    if (connection) {
+        self.receivedData = [[NSMutableData alloc] init];
+    }
+    else {
+        self.receivedData = nil;
+    }
+
+}
+/*-(void) authorizeUser:(void (^)(BOOL))block {
     self.block = block;
     NSURL *authURL = [NSURL URLWithString:@"http://atkritka.com/auth/index.php?json=Y"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:authURL];
@@ -38,7 +62,7 @@
         self.receivedData = nil;
     }
     
-}
+}*/
 
 
 -(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface Authorizer : NSObject <NSURLConnectionDelegate>
--(void) authorizeUser:(void(^)(BOOL authorized)) block;
+-(void) authorizeUser:(NSString *) username password:(NSString *) password blockCallBack:(void(^)(BOOL authorized)) block;
+//-(void) authorizeUser:(void(^)(BOOL authorized)) block;
 @property BOOL reauthorize;
 @end

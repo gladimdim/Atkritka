@@ -39,7 +39,7 @@
     self.collectionView.delegate = self.postCardsCollectionView;
     self.collectionView.dataSource = self.postCardsCollectionView;
     [self.postCardsCollectionView registerGestures];
-    [self.segmentedControl setImage:[UIImage imageNamed:@"ico-user"] forSegmentAtIndex:3];
+    [self.segmentedControl setImage:[UIImage imageNamed:@"user-ico_1"] forSegmentAtIndex:3];
 }
 
 -(void) viewDidAppear:(BOOL)animated {
@@ -88,6 +88,9 @@
 }
 
 -(void) postCardsDownloaded:(NSArray *)arrayOfPostCards {
+    if (arrayOfPostCards.count == 1) {
+        [self.arrayOfPostCards removeAllObjects];
+    }
     [self.arrayOfPostCards addObjectsFromArray:arrayOfPostCards];
     for (int i = 0; i < self.arrayOfPostCards.count; i++) {
         ImageDownloader *downloader = [[ImageDownloader alloc] init];
@@ -174,7 +177,7 @@
     }
     else {
         Authorizer *authorizer = [[Authorizer alloc] init];
-        [authorizer authorizeUser:^(BOOL authorized) {
+        [authorizer authorizeUser:nil password:nil blockCallBack:^(BOOL authorized) {
             if (!authorized) {
                 [self performSegueWithIdentifier:@"showLoginView" sender:self];
             }
@@ -185,7 +188,7 @@
 -(BOOL) checkUsernameAndPasswordExist {
     NSString *username = [[NSUserDefaults standardUserDefaults] valueForKey:@"username"];
     NSString *password = [[NSUserDefaults standardUserDefaults] valueForKey:@"password"];
-    return !([username isEqualToString:@""] || [password isEqualToString:@""]);
+    return !(username == nil || password == nil || [username isEqualToString:@""] || [password isEqualToString:@""]);
 
 }
 
@@ -219,8 +222,8 @@
 }
 
 - (IBAction)btnRandomPressed:(id)sender {
-    [self.arrayOfPostCards removeAllObjects];
-    [self.collectionView reloadData];
+    //[self.arrayOfPostCards removeAllObjects];
+    //[self.collectionView reloadData];
     [self downloadCards:0];
 }
 
