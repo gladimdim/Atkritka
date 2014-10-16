@@ -9,16 +9,6 @@
 /* Begin PBXBuildFile section */
 		F208B265167D24C20057D5DF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F208B264167D24C20057D5DF /* LoginViewController.m */; };
 		F218354B1671ED38008200B3 /* PostCardsCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F218354A1671ED38008200B3 /* PostCardsCollectionView.m */; };
-		F21835A4167702F0008200B3 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = F218359A167702F0008200B3 /* iTunesArtwork.png */; };
-		F21835A5167702F0008200B3 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = F218359B167702F0008200B3 /* Icon-72.png */; };
-		F21835A6167702F0008200B3 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F218359C167702F0008200B3 /* Icon-72@2x.png */; };
-		F21835A7167702F0008200B3 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = F218359D167702F0008200B3 /* Icon-Small-50.png */; };
-		F21835A8167702F0008200B3 /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F218359E167702F0008200B3 /* Icon-Small-50@2x.png */; };
-		F21835A9167702F0008200B3 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = F218359F167702F0008200B3 /* Icon-Small.png */; };
-		F21835AA167702F0008200B3 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F21835A0167702F0008200B3 /* Icon-Small@2x.png */; };
-		F21835AB167702F0008200B3 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F21835A1167702F0008200B3 /* Icon.png */; };
-		F21835AC167702F0008200B3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F21835A2167702F0008200B3 /* Icon@2x.png */; };
-		F21835AD167702F0008200B3 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F21835A3167702F0008200B3 /* iTunesArtwork@2x.png */; };
 		F22C9456166642510067F482 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F22C9455166642510067F482 /* logo.png */; };
 		F22C94591668DA460067F482 /* PostCardDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F22C94581668DA460067F482 /* PostCardDetailedViewController.m */; };
 		F26B510E16B1CBC0006E83B7 /* random-button.png in Resources */ = {isa = PBXBuildFile; fileRef = F26B510D16B1CBC0006E83B7 /* random-button.png */; };
@@ -59,16 +49,6 @@
 		F21835491671ED38008200B3 /* PostCardsCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCardsCollectionView.h; sourceTree = "<group>"; };
 		F218354A1671ED38008200B3 /* PostCardsCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCardsCollectionView.m; sourceTree = "<group>"; };
 		F218358E16744544008200B3 /* CardsManagementProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CardsManagementProtocol.h; path = Protocols/CardsManagementProtocol.h; sourceTree = "<group>"; };
-		F218359A167702F0008200B3 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iTunesArtwork.png; path = "../../../Documents/ico/App Icon [Rounded]/iTunesArtwork.png"; sourceTree = "<group>"; };
-		F218359B167702F0008200B3 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "../../../Documents/ico/App Icon [Rounded]/Icon-72.png"; sourceTree = "<group>"; };
-		F218359C167702F0008200B3 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72@2x.png"; path = "../../../Documents/ico/App Icon [Rounded]/Icon-72@2x.png"; sourceTree = "<group>"; };
-		F218359D167702F0008200B3 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "../../../Documents/ico/App Icon [Rounded]/Icon-Small-50.png"; sourceTree = "<group>"; };
-		F218359E167702F0008200B3 /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50@2x.png"; path = "../../../Documents/ico/App Icon [Rounded]/Icon-Small-50@2x.png"; sourceTree = "<group>"; };
-		F218359F167702F0008200B3 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "../../../Documents/ico/App Icon [Rounded]/Icon-Small.png"; sourceTree = "<group>"; };
-		F21835A0167702F0008200B3 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "../../../Documents/ico/App Icon [Rounded]/Icon-Small@2x.png"; sourceTree = "<group>"; };
-		F21835A1167702F0008200B3 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = "../../../Documents/ico/App Icon [Rounded]/Icon.png"; sourceTree = "<group>"; };
-		F21835A2167702F0008200B3 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../../../Documents/ico/App Icon [Rounded]/Icon@2x.png"; sourceTree = "<group>"; };
-		F21835A3167702F0008200B3 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iTunesArtwork@2x.png"; path = "../../../Documents/ico/App Icon [Rounded]/iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		F22C9455166642510067F482 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Resources/logo.png; sourceTree = "<group>"; };
 		F22C94571668DA460067F482 /* PostCardDetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCardDetailedViewController.h; sourceTree = "<group>"; };
 		F22C94581668DA460067F482 /* PostCardDetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCardDetailedViewController.m; sourceTree = "<group>"; };
@@ -134,16 +114,6 @@
 		F218352F1671BAE8008200B3 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				F218359A167702F0008200B3 /* iTunesArtwork.png */,
-				F218359B167702F0008200B3 /* Icon-72.png */,
-				F218359C167702F0008200B3 /* Icon-72@2x.png */,
-				F218359D167702F0008200B3 /* Icon-Small-50.png */,
-				F218359E167702F0008200B3 /* Icon-Small-50@2x.png */,
-				F218359F167702F0008200B3 /* Icon-Small.png */,
-				F21835A0167702F0008200B3 /* Icon-Small@2x.png */,
-				F21835A1167702F0008200B3 /* Icon.png */,
-				F21835A2167702F0008200B3 /* Icon@2x.png */,
-				F21835A3167702F0008200B3 /* iTunesArtwork@2x.png */,
 			);
 			name = Icons;
 			sourceTree = "<group>";
@@ -291,6 +261,11 @@
 				CLASSPREFIX = PostCard;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Dmytro Gladkyi";
+				TargetAttributes = {
+					F28A793716610D12003D9D8F = {
+						DevelopmentTeam = 29UL2Y36R9;
+					};
+				};
 			};
 			buildConfigurationList = F28A793216610D12003D9D8F /* Build configuration list for PBXProject "Atkritka" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -322,16 +297,6 @@
 				F22C9456166642510067F482 /* logo.png in Resources */,
 				F2E1FD49166A1A8F0073FAF2 /* Delete.png in Resources */,
 				F2E1FD52166A3F5F0073FAF2 /* PostCardDetailedlViewController.xib in Resources */,
-				F21835A4167702F0008200B3 /* iTunesArtwork.png in Resources */,
-				F21835A5167702F0008200B3 /* Icon-72.png in Resources */,
-				F21835A6167702F0008200B3 /* Icon-72@2x.png in Resources */,
-				F21835A7167702F0008200B3 /* Icon-Small-50.png in Resources */,
-				F21835A8167702F0008200B3 /* Icon-Small-50@2x.png in Resources */,
-				F21835A9167702F0008200B3 /* Icon-Small.png in Resources */,
-				F21835AA167702F0008200B3 /* Icon-Small@2x.png in Resources */,
-				F21835AB167702F0008200B3 /* Icon.png in Resources */,
-				F21835AC167702F0008200B3 /* Icon@2x.png in Resources */,
-				F21835AD167702F0008200B3 /* iTunesArtwork@2x.png in Resources */,
 				F2A3AD6D169DF3890083675E /* custom_grouped.png in Resources */,
 				F2A3AD6E169DF3890083675E /* segment_background.png in Resources */,
 				F2A3AD6F169DF3890083675E /* swipedDetailsViewBackground.png in Resources */,
@@ -445,10 +410,13 @@
 		F28A795D16610D12003D9D8F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Atkritka/Atkritka-Prefix.pch";
 				INFOPLIST_FILE = "Atkritka/Atkritka-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -456,10 +424,13 @@
 		F28A795E16610D12003D9D8F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Atkritka/Atkritka-Prefix.pch";
 				INFOPLIST_FILE = "Atkritka/Atkritka-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
