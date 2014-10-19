@@ -29,7 +29,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"segment_background"]];
     self.popularCounter = 1; //setting this to 1 and not to 0: because for API 0=1. 
     self.arrayOfPostCards = [[NSMutableArray alloc] initWithCapacity:10];
     [self downloadCards:self.popularCounter];
@@ -54,12 +53,12 @@
 
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
     self.navigationController.navigationBarHidden = YES;
     self.selectSegmentControlIndex ? [self.segmentedControl setSelectedSegmentIndex:self.selectSegmentControlIndex] : [self.segmentedControl setSelectedSegmentIndex:0];
-//    [self.segmentedControl setSelectedSegmentIndex:self.selectSegmentControlIndex];
     if (self.arrayOfPostCards.count == 0) {
         [self.segmentedControl setSelectedSegmentIndex:self.selectSegmentControlIndex];
-          [self segmentedControlChanged:self.segmentedControl];
+        [self segmentedControlChanged:self.segmentedControl];
     }
     
 }
@@ -79,7 +78,6 @@
     else if (self.segmentedControl.selectedSegmentIndex == 2) {
         self.selectSegmentControlIndex = self.segmentedControl.selectedSegmentIndex;
         [StatusLabel showLabelWithStatusOfAction:NSLocalizedString(@"Updating", nil) forView:self.view position:@"center"];
-        //[self.postCardDownloader getCardsDelegate:self section:@"all&" forPageId:pageId];
         [self.postCardDownloader getRandomCard:self];
     }
     else if (self.segmentedControl.selectedSegmentIndex == 3) {
@@ -123,19 +121,6 @@
     }
     [self.collectionView reloadData];
 }
-
-/*-(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-   // [self performSegueWithIdentifier:@"showCardDetailView" sender:self];
-    PostCardDetailedViewController *pcVC = [[PostCardDetailedViewController alloc] initWithNibName:@"PostCardDetailedlViewController" bundle:[NSBundle mainBundle]];
-    NSIndexPath *selectedIndex = [[self.collectionView indexPathsForSelectedItems] lastObject];
-    pcVC.postCardObj = [self.arrayOfPostCards objectAtIndex:selectedIndex.row];
-    pcVC.delegate = self;
-    UINavigationController *unc = [[UINavigationController alloc] initWithRootViewController:pcVC];
-    [unc setNavigationBarHidden:YES];
-    [self presentViewController:unc animated:YES completion:^{
-        NSLog(@"Opefning modal view");
-    }];
-}*/
 
 - (IBAction)segmentedControlChanged:(id)sender {
     //check that we did not select last segment to show login view.

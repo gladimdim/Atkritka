@@ -58,11 +58,6 @@
     //that is why we have several uiscrolls swiped 
     UIScrollView *scrollView = (UIScrollView *) [cell.contentView viewWithTag:TAG_SCROLLVIEW];
     [scrollView setContentOffset:CGPointMake(0, 0)];
-    /*
-    UIView *view = [scrollView viewWithTag:3];
-    UILabel *label = (UILabel*) [view viewWithTag:5];
-    label.text = [NSString stringWithFormat:@"%i", indexPath.row];
-    NSLog(@"generated cell #%i", indexPath.row);*/
     
      PostCardObject *postCardObj = self.arrayOfData[indexPath.row];
      UIImageView *imageViewFromCell = (UIImageView *) [scrollView viewWithTag:TAG_IMAGEVIEW];
@@ -76,9 +71,8 @@
     //getting container view (view which is swipped to the left)
     //setting its background color and rounded corners
     UIView *containerView = (UIView *) [scrollView viewWithTag:TAG_VIEW_CONTAINTER];
-//    containerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"custom_grouped"]];
-    //containerView.layer.cornerRadius = 5;
-    UILabel *labelAuthor = (UILabel*) [containerView viewWithTag:TAG_AUTHOR_LABEL];
+
+    UILabel *labelAuthor = (UILabel *) [containerView viewWithTag:TAG_AUTHOR_LABEL];
     labelAuthor.text = postCardObj.author;
     
     UILabel *labelCreatedAt = (UILabel *) [containerView viewWithTag:TAG_CREATEDAT_LABEL];
@@ -91,11 +85,9 @@
         self.popularCounter = self.popularCounter + 1;
         [self.callBackDelegate increasepageCounter];
         [self.callBackDelegate downloadCards:self.popularCounter];
-         //[self.collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObjects:NSIndex, nil]];
         UIViewController *con = (UIViewController *) self.callBackDelegate;
         
         [StatusLabel showLabelWithStatusOfAction:@"Обновляем" forView:con.view position:@"center"];
-         //[self.callBackDelegate addDummyPostCardsAndUpdateTableView];
     }
     
     return cell;
