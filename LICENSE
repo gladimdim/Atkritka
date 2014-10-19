@@ -1,2 +1,4 @@
 All rights belong to Dmytro Gladkyi. 
 It is not allowed to modify or distribute this project's source code without approval.
+
+Exception for NSData+Base64 implementation. All rights belong to Matt Gallagher. See NSData+Base64.h for more license details.
